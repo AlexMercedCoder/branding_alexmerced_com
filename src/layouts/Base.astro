@@ -7,15 +7,72 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  article?: {
+    publishedTime?: Date;
+    modifiedTime?: Date;
+    tags?: string[];
+  };
+  schema?: Record<string, any> | Record<string, any>[];
 }
 
 const {
   title = "branding.alexmerced.com — Build an Unignorable Personal Brand on Proof of Work",
-  description = "Alex Merced's systems-driven blueprint for technical professionals and career changers to build career sovereignty through proof of work and compound distribution.",
+  description = "Alex Merced's systems-driven blueprint for technical professionals and career switchers to build career sovereignty through proof of work and compound distribution.",
   image = "/images/book-cover.png",
+  article,
+  schema = [],
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
+
+// Base Schema Graph (Alex Merced + branding.alexmerced.com)
+const defaultPersonSchema = {
+  "@type": "Person",
+  "@id": "https://branding.alexmerced.com/#alexmerced",
+  "name": "Alex Merced",
+  "jobTitle": "Head of Developer Relations",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Dremio",
+    "url": "https://www.dremio.com"
+  },
+  "url": "https://branding.alexmerced.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/alexmerced/",
+    "https://x.com/alexmercedcoder",
+    "https://github.com/AlexMercedCoder",
+    "https://youtube.com/@AlexMercedCoder",
+    "https://alexmerced.substack.com",
+    "https://alexmerced.com",
+    "https://alexmerced.blog"
+  ],
+  "award": "2025 Dremio CEO Award",
+  "description": "Head of Developer Relations at Dremio, O'Reilly & Manning author, and creator of the Reputation as Code engineering framework."
+};
+
+const defaultWebSiteSchema = {
+  "@type": "WebSite",
+  "@id": "https://branding.alexmerced.com/#website",
+  "url": "https://branding.alexmerced.com",
+  "name": "branding.alexmerced.com",
+  "description": "The engineering and practitioner blueprint for personal branding, proof of work, and career sovereignty by Alex Merced.",
+  "publisher": {
+    "@id": "https://branding.alexmerced.com/#alexmerced"
+  },
+  "inLanguage": "en-US"
+};
+
+const extraSchemas = Array.isArray(schema) ? schema : [schema];
+
+const fullStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    defaultPersonSchema,
+    defaultWebSiteSchema,
+    ...extraSchemas.filter(Boolean)
+  ]
+};
 ---
 
 <!doctype html>
@@ -27,23 +84,56 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0b0f19" />
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website" />
+    <!-- Crawlers & Robots Directives -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:site_name" content="branding.alexmerced.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content={article ? "article" : "website"} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1536" />
+    <meta property="og:image:alt" content={title} />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+    {article?.publishedTime && (
+      <meta property="article:published_time" content={article.publishedTime.toISOString()} />
+    )}
+    {article?.modifiedTime && (
+      <meta property="article:modified_time" content={article.modifiedTime.toISOString()} />
+    )}
+    {article?.tags && article.tags.map((tag) => (
+      <meta property="article:tag" content={tag} />
+    ))}
+    {article && (
+      <meta property="article:author" content="https://branding.alexmerced.com/#alexmerced" />
+    )}
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@alexmercedcoder" />
     <meta name="twitter:creator" content="@alexmercedcoder" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
+    <!-- RSS & Discovery Feeds -->
+    <link rel="alternate" type="application/rss+xml" title="branding.alexmerced.com RSS Feed" href="/rss.xml" />
+    <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt" />
+    <link rel="alternate" type="text/plain" title="LLMs-full.txt" href="/llms-full.txt" />
+    <link rel="webmcp" href="/.well-known/webmcp.json" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(fullStructuredData)} />
   </head>
   <body>
     <SiteHeader currentPath={Astro.url.pathname} />

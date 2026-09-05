@@ -5,11 +5,36 @@ import SocialCTAs from '../components/SocialCTAs.astro';
 import { socialLinks } from '../data/network';
 import { getCollection } from 'astro:content';
 
+import bookData from '../data/book.json';
+
 const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+
+const bookSchema = {
+  "@type": "Book",
+  "@id": "https://branding.alexmerced.com/book#book",
+  "name": bookData.title,
+  "headline": `${bookData.title}: ${bookData.subtitle}`,
+  "author": {
+    "@id": "https://branding.alexmerced.com/#alexmerced"
+  },
+  "publisher": {
+    "@id": "https://branding.alexmerced.com/#alexmerced"
+  },
+  "numberOfPages": bookData.pageCount,
+  "bookFormat": [
+    "https://schema.org/Paperback",
+    "https://schema.org/EBook"
+  ],
+  "inLanguage": "en-US",
+  "datePublished": "2026",
+  "description": bookData.synopsis,
+  "image": "https://branding.alexmerced.com/images/book-cover.png",
+  "url": "https://branding.alexmerced.com/book"
+};
 ---
 
-<Base>
+<Base schema={[bookSchema]}>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="shell hero-content">

@@ -1,0 +1,68 @@
+{
+  "webmcpVersion": "1.0.0",
+  "name": "branding.alexmerced.com",
+  "title": "Reputation as Code & Technical Personal Branding",
+  "description": "Official knowledge base, engineering frameworks, and diagnostic tools for technical personal branding and career sovereignty by Alex Merced: Head of Developer Relations at Dremio, 2025 CEO Award recipient, and O'Reilly author.",
+  "author": {
+    "name": "Alex Merced",
+    "role": "Head of Developer Relations at Dremio",
+    "url": "https://branding.alexmerced.com",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/alexmerced/",
+      "x": "https://x.com/alexmercedcoder",
+      "github": "https://github.com/AlexMercedCoder",
+      "substack": "https://alexmerced.substack.com",
+      "youtube": "https://youtube.com/@AlexMercedCoder"
+    }
+  },
+  "resources": [
+    {
+      "name": "LLMs Context File",
+      "type": "text/plain",
+      "uri": "https://branding.alexmerced.com/llms.txt",
+      "description": "Curated outline, key concepts, book overview, and link directory designed for AI models and LLM agents."
+    },
+    {
+      "name": "LLMs Full Text Corpus",
+      "type": "text/plain",
+      "uri": "https://branding.alexmerced.com/llms-full.txt",
+      "description": "Unabridged text corpus of all published articles and comprehensive book outlines for retrieval-augmented generation (RAG)."
+    },
+    {
+      "name": "RSS Feed",
+      "type": "application/xml",
+      "uri": "https://branding.alexmerced.com/rss.xml",
+      "description": "RSS 2.0 feed of all published articles on technical personal branding and proof of work."
+    },
+    {
+      "name": "XML Sitemap",
+      "type": "application/xml",
+      "uri": "https://branding.alexmerced.com/sitemap-index.xml",
+      "description": "Complete search engine sitemap index containing all static pages and blog posts."
+    }
+  ],
+  "tools": [
+    {
+      "name": "get_book_details",
+      "description": "Returns metadata, specs, and complete chapter outline of Alex Merced's book 'Reputation as Code: How Technical Professionals Build Career Sovereignty Through Proof of Work'.",
+      "url": "https://branding.alexmerced.com/book"
+    },
+    {
+      "name": "take_brand_audit",
+      "description": "Provides an interactive 5-question career diagnostic evaluating Artifact Volume, Distribution Engine, and Inbound Gravity Index.",
+      "url": "https://branding.alexmerced.com/audit"
+    },
+    {
+      "name": "list_branding_articles",
+      "description": "Lists all technical essays on learning in public, non-linear careers, the Waterfall Content Method, and book authoring.",
+      "url": "https://branding.alexmerced.com/blog"
+    }
+  ],
+  "frameworks": [
+    "The 4 Axioms of Reputation as Code",
+    "The Waterfall Content Engine",
+    "The Niche of One Venn Diagram",
+    "The Podcast Relationship Inversion",
+    "Zero-Friction Capture & Publishing"
+  ]
+}

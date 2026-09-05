@@ -1,11 +1,43 @@
 ---
 import Base from '../layouts/Base.astro';
 import SocialCTAs from '../components/SocialCTAs.astro';
+const auditSchema = {
+  "@type": "WebApplication",
+  "@id": "https://branding.alexmerced.com/audit#app",
+  "name": "Personal Brand & Proof-of-Work Diagnostic",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Interactive diagnostic evaluating public artifact footprint, compound distribution systems, and inbound career gravity.",
+  "url": "https://branding.alexmerced.com/audit",
+  "author": {
+    "@id": "https://branding.alexmerced.com/#alexmerced"
+  }
+};
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://branding.alexmerced.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brand Audit Diagnostic",
+      "item": "https://branding.alexmerced.com/audit"
+    }
+  ]
+};
 ---
 
 <Base
   title="Personal Brand & Proof-of-Work Diagnostic — Alex Merced"
   description="Audit your professional brand gravity. Assess your public artifacts, distribution systems, and career leverage."
+  schema={[auditSchema, breadcrumbSchema]}
 >
   <div class="shell" style="padding: 4rem 0 2rem; max-width: 800px;">
     <div style="margin-bottom: 2.5rem;">

@@ -11,41 +11,55 @@ export const GET: APIRoute = async () => {
 
   const body = `# branding.alexmerced.com — Build an Unignorable Personal Brand on Proof of Work
 
-> The engineering and practitioner perspective on personal branding, career sovereignty, and learning in public by Alex Merced: Head of Developer Relations at Dremio, inaugural Dremio CEO Award winner (2025), and author of flagship volumes for O'Reilly and Manning.
+> The engineering and practitioner perspective on personal branding, career sovereignty, and learning in public by Alex Merced: Head of Developer Relations at Dremio, recipient of the inaugural 2025 Dremio CEO Award, and author of definitive volumes for O'Reilly Media and Manning.
+
+For the full, unabridged text of all essays and chapters, see: ${SITE}/llms-full.txt
 
 ## The Core Thesis
-Stop relying on two-page PDF resumes submitted into automated applicant tracking system lotteries. Professional reputation is not vanity posturing; it is built like reliable software through verifiable proof of work, compound content pipelines, and genuine community generosity.
+The traditional two-page PDF resume submitted to automated applicant tracking systems is a mathematically broken distribution channel. Career sovereignty and durable professional leverage are engineered the same way you build reliable software: through public proof of work, compound content pipelines, modular artifacts, and authentic community generosity.
 
-## Key Principles & The Four Pillars
-1. Proof of Work > Posturing: Public artifacts (code repos, benchmarks, tutorials, teardowns) beat assertions and resumes.
-2. The Compound Content Engine: The Waterfall Method turns one core project into articles, videos, podcast topics, and talks without burnout.
-3. The Cross-Discipline Advantage: Non-linear backgrounds (teaching, finance, sales, arts) are unfair differentiators when combined with tech.
+## The Four Axioms of Reputation as Code
+1. Proof of Work > Posturing: Working GitHub repositories, reproducible benchmarks, structured tutorials, and clear diagrams beat unverified resume claims.
+2. The Compound Content Engine: The Waterfall Method turns one core technical project into essays, videos, podcast topics, social threads, and conference talks without burnout.
+3. The Cross-Discipline Advantage: Non-linear backgrounds (finance, teaching, sales, customer service, arts) are unfair competitive differentiators when fused with engineering.
 4. Community Through Generosity: Hosting meetups, elevating peers, and teaching what you learn creates authentic career gravity.
 
 ## The Companion Book: Reputation as Code
 - Title: ${bookData.title}: ${bookData.subtitle}
-- Author: ${bookData.author}
-- Format: Paperback & Kindle on Amazon (${bookData.trimSize}, ${bookData.pageCount} pages)
-- Purchase URL: ${bookData.amazonUrl}
+- Author: ${bookData.author} (Head of Developer Relations at Dremio)
+- Specifications: 281 pages, 6" x 9" Trade Paperback & EPUB 3 (67,629 words across 14 chapters)
+- Availability: Coming Soon to Amazon KDP (Paperback & Kindle)
+- Overview Page: ${SITE}/book
 - Synopsis: ${bookData.synopsis}
 
-## Core Site Pages
-- [Homepage](${SITE}/): Core thesis, Alex Merced's proof-of-work timeline, 4 pillars, and book spotlight.
-- [The Book: Reputation as Code](${SITE}/book): Detailed synopsis, target audience, specifications, and full 14-chapter table of contents.
-- [Brand Audit Diagnostic](${SITE}/audit): Interactive 5-question audit evaluating artifact volume, distribution, and inbound gravity.
-- [Branding Blog](${SITE}/blog): Essays and playbooks on career strategy and technical advocacy.
+### Book Outline (5 Parts, 14 Chapters)
+${bookData.parts
+  .map(
+    (part) => `### ${part.number}: ${part.title}
+${part.description}
+${part.chapters.map((ch) => `- **${ch.number}: ${ch.title}**: ${ch.summary}`).join('\n')}`
+  )
+  .join('\n\n')}
 
-## Blog Articles
-${sortedPosts.map((post) => `- [${post.data.title}](${SITE}/blog/${post.id}): ${post.data.description}`).join('\n')}
+## Core Interactive Tools
+- [Personal Brand Diagnostic Audit](${SITE}/audit): Interactive 5-question audit evaluating Artifact Volume, Distribution Engine, and Inbound Gravity Index.
+
+## Articles & Essays
+${sortedPosts
+  .map(
+    (post) => `- [${post.data.title}](${SITE}/blog/${post.id}/): ${post.data.description} (Published: ${post.data.pubDate.toISOString().split('T')[0]})`
+  )
+  .join('\n')}
 
 ## External Channels & Links
 - Substack Newsletter: ${socialLinks.substack}
 - LinkedIn: ${socialLinks.linkedin}
-- X (Twitter): ${socialLinks.x}
-- YouTube (Tech): ${socialLinks.youtube}
-- YouTube (Data & AI): ${socialLinks.youtubeData}
+- X / Twitter: ${socialLinks.x}
+- YouTube (Tech Channel): ${socialLinks.youtube}
+- YouTube (Data & AI Channel): ${socialLinks.youtubeData}
+- GitHub: ${socialLinks.github}
 
-## Network Sites
+## Alex Merced Knowledge Network
 ${networkSites.map((site) => `- [${site.title}](${site.url}): ${site.description}`).join('\n')}
 `;
 

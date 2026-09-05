@@ -1,4 +1,43 @@
+# ==============================================================================
+# robots.txt for branding.alexmerced.com
+# Personal Branding, Proof of Work, and Career Sovereignty by Alex Merced
+# ==============================================================================
+
+# Standard Web Crawlers (Google, Bing, DuckDuckGo, Yahoo, etc.)
 User-agent: *
 Allow: /
 
+# AI Crawlers & LLM Ingestion Agents (OpenAI, Anthropic, Perplexity, Google, Meta, Apple)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Discovery Feeds & Sitemaps
 Sitemap: https://branding.alexmerced.com/sitemap-index.xml
+# LLMs Context: https://branding.alexmerced.com/llms.txt
+# LLMs Full Corpus: https://branding.alexmerced.com/llms-full.txt
+# WebMCP: https://branding.alexmerced.com/.well-known/webmcp.json
+# RSS Feed: https://branding.alexmerced.com/rss.xml
