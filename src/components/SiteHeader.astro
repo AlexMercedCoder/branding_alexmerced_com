@@ -1,0 +1,28 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="shell nav-container">
+    <a href="/" class="brand-logo">
+      <span>//</span> branding.alexmerced.com
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
+        <li><a href="/book" class={currentPath.startsWith('/book') ? 'active' : ''}>The Book</a></li>
+        <li><a href="/blog" class={currentPath.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
+        <li><a href="/audit" class={currentPath.startsWith('/audit') ? 'active' : ''}>Brand Audit</a></li>
+        <li>
+          <a href="https://alexmerced.substack.com" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+            Substack ↗
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

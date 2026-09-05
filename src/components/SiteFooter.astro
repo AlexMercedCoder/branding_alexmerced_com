@@ -1,0 +1,59 @@
+---
+import { socialLinks, networkSites } from '../data/network';
+---
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <h3 style="margin-bottom: 0.75rem; color: #ffffff;">branding.alexmerced.com</h3>
+        <p style="color: var(--text-muted); max-width: 380px; font-size: 0.95rem;">
+          Engineering career sovereignty through public proof of work, systems thinking, and compound distribution.
+        </p>
+        <div class="social-pills" style="margin-top: 1.25rem;">
+          <a href={socialLinks.substack} target="_blank" rel="noopener" class="social-pill">
+            Substack
+          </a>
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener" class="social-pill">
+            LinkedIn
+          </a>
+          <a href={socialLinks.x} target="_blank" rel="noopener" class="social-pill">
+            X (@alexmercedcoder)
+          </a>
+          <a href={socialLinks.youtube} target="_blank" rel="noopener" class="social-pill">
+            YouTube
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Pages</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 2;">
+          <li><a href="/">Home</a></li>
+          <li><a href="/book">Reputation as Code (Book)</a></li>
+          <li><a href="/blog">Branding Essays & Blog</a></li>
+          <li><a href="/audit">Interactive Brand Audit</a></li>
+          <li><a href="/llms.txt">llms.txt (AI Agent Guide)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Network</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 2;">
+          {networkSites.map((site) => (
+            <li>
+              <a href={site.url} target="_blank" rel="noopener">
+                {site.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; {new Date().getFullYear()} Alex Merced. All rights reserved.</div>
+      <div>Built with Astro 7 &bull; Part of the Alex Merced Network</div>
+    </div>
+  </div>
+</footer>

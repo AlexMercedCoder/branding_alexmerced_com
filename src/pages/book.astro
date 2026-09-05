@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import SocialCTAs from '../components/SocialCTAs.astro';
+import bookData from '../data/book.json';
+---
+
+<Base
+  title={`${bookData.title} by Alex Merced — Career Sovereignty Through Proof of Work`}
+  description={bookData.synopsis}
+>
+  <div class="shell" style="padding: 4rem 0 2rem;">
+    <!-- Book Header -->
+    <div style="max-width: 800px; margin-bottom: 3.5rem;">
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <span class="badge badge-amber">Non-Fiction Book</span>
+        <span class="badge badge-cyan">{bookData.amazonStatus}</span>
+      </div>
+      <h1 style="margin-bottom: 0.75rem;">{bookData.title}</h1>
+      <p style="font-size: 1.3rem; color: var(--amber); font-weight: 600; margin-bottom: 1.5rem;">
+        {bookData.subtitle}
+      </p>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+        {bookData.synopsis}
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.85rem 1.8rem;">
+          Order on Amazon ↗
+        </a>
+        <a href="#table-of-contents" class="btn btn-secondary">
+          View Table of Contents &darr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Book Specs Grid -->
+    <div class="card" style="margin-bottom: 4rem; background: var(--bg-subtle);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center;">
+        <div>
+          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Format</div>
+          <strong style="color: var(--text-main); font-size: 1.1rem;">Paperback & Kindle</strong>
+        </div>
+        <div>
+          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Page Count</div>
+          <strong style="color: var(--text-main); font-size: 1.1rem;">{bookData.pageCount} Pages</strong>
+        </div>
+        <div>
+          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Trim Size</div>
+          <strong style="color: var(--text-main); font-size: 1.1rem;">{bookData.trimSize} Trade</strong>
+        </div>
+        <div>
+          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Author</div>
+          <strong style="color: var(--text-main); font-size: 1.1rem;">{bookData.author}</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who This Book Is For -->
+    <div style="margin-bottom: 4rem;">
+      <h2 style="margin-bottom: 1.5rem;">Who This Book Is For</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h4 style="color: var(--amber); margin-bottom: 0.5rem;">Software & Data Engineers</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+            Developers who want to be recognized for high-caliber technical work without becoming cringey social media influencers.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">Career Switchers</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+            Professionals pivoting into technology from finance, teaching, retail, or the arts who need to prove capability without an Ivy League CS degree.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--emerald); margin-bottom: 0.5rem;">DevRel & Technical Educators</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+            Advocates and creators looking to build repeatable content engines, pitch major tech publishers, and establish enduring industry authority.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table of Contents Breakdown -->
+    <div id="table-of-contents" style="margin-bottom: 4rem;">
+      <h2 style="margin-bottom: 0.75rem;">Full Table of Contents</h2>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        Five parts and fourteen actionable chapters designed to take you from cold resume applications to compounding inbound gravity.
+      </p>
+
+      <div style="display: grid; gap: 1.5rem;">
+        {bookData.parts.map((part) => (
+          <div class="card">
+            <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <span class="badge badge-amber">{part.number}</span>
+              <h3 style="margin: 0; font-size: 1.3rem;">{part.title}</h3>
+            </div>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-muted);">
+              {part.chapters.map((ch) => (
+                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: var(--cyan);">&bull;</span> {ch}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Social & Purchase CTA -->
+    <SocialCTAs />
+  </div>
+</Base>

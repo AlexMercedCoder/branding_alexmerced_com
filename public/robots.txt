@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://branding.alexmerced.com/sitemap-index.xml

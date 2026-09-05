@@ -1,0 +1,57 @@
+{
+  "title": "Reputation as Code",
+  "subtitle": "How Technical Professionals Build Career Sovereignty Through Proof of Work",
+  "author": "Alex Merced",
+  "amazonUrl": "https://www.amazon.com/dp/B0DXXXXXX",
+  "amazonStatus": "Available on Amazon (Paperback & Kindle)",
+  "pageCount": 174,
+  "trimSize": "6\" x 9\"",
+  "isbn": "979-8-XXXXXXXXX",
+  "synopsis": "Stop sending resumes into the black hole of automated applicant tracking systems. In Reputation as Code, Head of Developer Relations and O'Reilly author Alex Merced breaks down how to engineer career sovereignty the same way you build reliable software: through public artifacts, repeatable content pipelines, modular output, and authentic community generosity. Written from the perspective of an engineer and educator who pivoted into tech in his mid-30s, this book provides an actionable blueprint for turning your technical skills, non-linear background, and curiosity into unstoppable inbound gravity.",
+  "parts": [
+    {
+      "number": "Part One",
+      "title": "The Realities of Modern Career Distribution",
+      "chapters": [
+        "Chapter 1: The Fallacy of the Job Board Lottery",
+        "Chapter 2: The Myth of the Overnight Authority",
+        "Chapter 3: Your Non-Linear Superpower"
+      ]
+    },
+    {
+      "number": "Part Two",
+      "title": "The Artifact Foundation",
+      "chapters": [
+        "Chapter 4: The Discipline of Learning in Public",
+        "Chapter 5: Defining Your Niche of One",
+        "Chapter 6: Shipping Real Artifacts"
+      ]
+    },
+    {
+      "number": "Part Three",
+      "title": "The Production Engine",
+      "chapters": [
+        "Chapter 7: Systems Over Willpower",
+        "Chapter 8: The Waterfall Content Engine",
+        "Chapter 9: Responsible AI as an Output Amplifier"
+      ]
+    },
+    {
+      "number": "Part Four",
+      "title": "Expanding the Gravity Well",
+      "chapters": [
+        "Chapter 10: Community as an Engine of Generosity",
+        "Chapter 11: The Stage: Speaking and Presentations",
+        "Chapter 12: The Path to Authoring Technical Books"
+      ]
+    },
+    {
+      "number": "Part Five",
+      "title": "Career Sovereignty",
+      "chapters": [
+        "Chapter 13: Turning Gravity into Opportunities",
+        "Chapter 14: Staying Curious for the Long Haul"
+      ]
+    }
+  ]
+}

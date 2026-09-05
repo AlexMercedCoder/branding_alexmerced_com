@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import SocialCTAs from '../../components/SocialCTAs.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base
+  title="Branding & Career Strategy Blog — Alex Merced"
+  description="Practical essays on engineering proof of work, building content engines, non-linear career pivots, and developer advocacy."
+>
+  <div class="shell" style="padding: 4rem 0 2rem;">
+    <div style="max-width: 750px; margin-bottom: 3.5rem;">
+      <span class="badge badge-amber" style="margin-bottom: 0.75rem;">Essays & Notes</span>
+      <h1 style="margin-bottom: 0.75rem;">Personal Branding from an Engineering Lens</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+        Thoughts, playbooks, and strategies for building career sovereignty through public proof of work, content architecture, and community engagement.
+      </p>
+    </div>
+
+    <div style="display: grid; gap: 2rem; margin-bottom: 4rem;">
+      {sortedPosts.map((post) => (
+        <article class="card">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div style="display: flex; gap: 0.5rem;">
+              {post.data.tags.map((tag: string) => (
+                <span class="badge badge-cyan" style="font-size: 0.75rem;">{tag}</span>
+              ))}
+            </div>
+            <time style="font-size: 0.85rem; color: var(--text-faint);">
+              {new Date(post.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+            </time>
+          </div>
+
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </h2>
+
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            {post.data.description}
+          </p>
+
+          <a href={`/blog/${post.id}`} style="font-weight: 600; font-size: 0.9rem;">
+            Read article &rarr;
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <SocialCTAs />
+  </div>
+</Base>

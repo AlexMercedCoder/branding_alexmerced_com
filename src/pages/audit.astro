@@ -1,0 +1,228 @@
+---
+import Base from '../layouts/Base.astro';
+import SocialCTAs from '../components/SocialCTAs.astro';
+---
+
+<Base
+  title="Personal Brand & Proof-of-Work Diagnostic — Alex Merced"
+  description="Audit your professional brand gravity. Assess your public artifacts, distribution systems, and career leverage."
+>
+  <div class="shell" style="padding: 4rem 0 2rem; max-width: 800px;">
+    <div style="margin-bottom: 2.5rem;">
+      <span class="badge badge-amber" style="margin-bottom: 0.75rem;">Interactive Tool</span>
+      <h1 style="margin-bottom: 0.75rem;">The Personal Brand & Proof-of-Work Audit</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+        Answer these five diagnostic questions to evaluate your current career gravity index and receive customized recommendations.
+      </p>
+    </div>
+
+    <form id="audit-form" class="audit-container">
+      <!-- Question 1 -->
+      <div class="audit-question">
+        <h4 style="margin-bottom: 0.5rem; color: #ffffff;">1. Public Artifact Footprint</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+          If a hiring manager or collaborator Googles your name, what verifiable proof of your competence appears?
+        </p>
+        <div class="audit-options">
+          <label class="audit-option">
+            <input type="radio" name="q1" value="1" required />
+            <span>Only my LinkedIn profile and an outdated PDF resume.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q1" value="2" />
+            <span>A few GitHub repos with generic school/tutorial code and minimal READMEs.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q1" value="3" />
+            <span>Multiple production-quality repos, detailed walkthrough guides, or documented demos.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q1" value="4" />
+            <span>A comprehensive digital garden of articles, original tools, open-source projects, or publications.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="audit-question">
+        <h4 style="margin-bottom: 0.5rem; color: #ffffff;">2. The Content & Learning Pipeline</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+          How do you capture and share the technical problems you solve in your everyday work?
+        </p>
+        <div class="audit-options">
+          <label class="audit-option">
+            <input type="radio" name="q2" value="1" required />
+            <span>I don't publish anything; I solve problems privately and move on.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q2" value="2" />
+            <span>I occasionally post on social media when I remember to, but without a schedule.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q2" value="3" />
+            <span>I maintain a blog or channel where I document lessons and solutions semi-regularly.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q2" value="4" />
+            <span>I run a repeatable waterfall pipeline: one problem becomes a post, code sample, video, and talk idea.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="audit-question">
+        <h4 style="margin-bottom: 0.5rem; color: #ffffff;">3. Non-Linear Narrative & Differentiation</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+          How do you position your non-technical skills, past careers, or diverse personal interests?
+        </p>
+        <div class="audit-options">
+          <label class="audit-option">
+            <input type="radio" name="q3" value="1" required />
+            <span>I hide them or leave them off my profile so I don't look unfocused.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q3" value="2" />
+            <span>I list them as past jobs, but I don't connect them to my current technical strengths.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q3" value="3" />
+            <span>I highlight how my communication, teaching, or domain background enhances my work.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q3" value="4" />
+            <span>My interdisciplinary background is my primary brand hook (my unique "niche of one").</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="audit-question">
+        <h4 style="margin-bottom: 0.5rem; color: #ffffff;">4. Community Engagement & Generosity</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+          What is your relationship with peers and the broader technical community?
+        </p>
+        <div class="audit-options">
+          <label class="audit-option">
+            <input type="radio" name="q4" value="1" required />
+            <span>I only reach out to people when I need a referral or a job.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q4" value="2" />
+            <span>I lurk in Slack/Discord communities and occasionally like other people's posts.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q4" value="3" />
+            <span>I actively answer questions, share helpful resources, and celebrate colleagues' work.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q4" value="4" />
+            <span>I organize events, host discussions, maintain forums, or act as a community hub.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="audit-question" style="border-bottom: none;">
+        <h4 style="margin-bottom: 0.5rem; color: #ffffff;">5. Inbound Opportunity Gravity</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+          How do new career opportunities, speaking invitations, or consulting gigs reach you?
+        </p>
+        <div class="audit-options">
+          <label class="audit-option">
+            <input type="radio" name="q5" value="1" required />
+            <span>100% outbound: I have to apply through job boards or cold email recruiters.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q5" value="2" />
+            <span>Mostly outbound with an occasional message from automated third-party recruiters.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q5" value="3" />
+            <span>A balanced mix: leaders and recruiters occasionally reach out based on my public content.</span>
+          </label>
+          <label class="audit-option">
+            <input type="radio" name="q5" value="4" />
+            <span>Almost exclusively inbound: opportunities come from people who already know my track record.</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; margin-top: 1rem;">
+        Calculate My Brand Gravity Score
+      </button>
+    </form>
+
+    <!-- Result Display -->
+    <div id="audit-result" style="display: none;" class="audit-result-box">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+        <span class="badge badge-amber" id="result-tier">Tier</span>
+        <div style="font-size: 1.5rem; font-weight: 800; color: var(--amber);" id="result-score">0 / 20</div>
+      </div>
+      <h3 id="result-title" style="margin-bottom: 0.75rem;">Assessment Title</h3>
+      <p id="result-description" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+        Description...
+      </p>
+
+      <div style="background: var(--bg-card); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 1.5rem;">
+        <h4 style="margin-bottom: 0.5rem; color: var(--cyan);">Recommended Next Step:</h4>
+        <p id="result-action" style="margin: 0; font-size: 0.95rem; color: var(--text-main);">
+          Action item...
+        </p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <a href="/book" class="btn btn-primary">
+          Read Reputation as Code &rarr;
+        </a>
+        <a href="https://alexmerced.substack.com" target="_blank" rel="noopener" class="btn btn-secondary">
+          Join Alex's Substack Newsletter ↗
+        </a>
+      </div>
+    </div>
+
+    <SocialCTAs />
+  </div>
+
+  <script>
+    const form = document.getElementById('audit-form');
+    const resultBox = document.getElementById('audit-result');
+    const resultScore = document.getElementById('result-score');
+    const resultTier = document.getElementById('result-tier');
+    const resultTitle = document.getElementById('result-title');
+    const resultDescription = document.getElementById('result-description');
+    const resultAction = document.getElementById('result-action');
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form as HTMLFormElement);
+      let total = 0;
+      for (const val of data.values()) {
+        total += parseInt(val as string, 10);
+      }
+
+      if (resultBox && resultScore && resultTier && resultTitle && resultDescription && resultAction) {
+        resultScore.textContent = `${total} / 20 Points`;
+
+        if (total <= 8) {
+          resultTier.textContent = 'Outbound Dependent (Lottery Mode)';
+          resultTitle.textContent = 'High Friction, Low Visibility';
+          resultDescription.textContent = 'You are currently relying almost exclusively on traditional outbound job applications and resumes. Because your proof of work is locked away or unindexed, automated filters treat you like thousands of other candidates.';
+          resultAction.textContent = 'Pick one problem you solved this week. Write a 400-word explanation or publish a clean GitHub repo with a comprehensive README. Shift from declarations to artifacts.';
+        } else if (total <= 14) {
+          resultTier.textContent = 'Active Builder (Emerging Gravity)';
+          resultTitle.textContent = 'Building Momentum, Needs Systems';
+          resultDescription.textContent = 'You have public work and understand the value of sharing what you learn, but your production is sporadic. Without a structured waterfall content pipeline, you risk periodic burnout and missed compounding.';
+          resultAction.textContent = 'Establish a repeatable weekly capture routine. Turn your next technical milestone into three formats: a blog post, a short video walkthrough, and three key takeaways on LinkedIn and X.';
+        } else {
+          resultTier.textContent = 'High Gravity Authority (Sovereign Mode)';
+          resultTitle.textContent = 'Unstoppable Inbound Career Gravity';
+          resultDescription.textContent = 'You have engineered an unignorable personal brand rooted in verifiable proof of work, cross-discipline storytelling, and community generosity. Opportunities naturally gravitate to you.';
+          resultAction.textContent = 'Level up your distribution channels: pitch major publishers (O\'Reilly, Manning) or expand into keynote speaking and advisory roles as detailed in Reputation as Code.';
+        }
+
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+</Base>

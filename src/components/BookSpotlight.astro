@@ -1,0 +1,45 @@
+---
+import bookData from '../data/book.json';
+---
+
+<section class="card" style="padding: 2.5rem; margin: 3.5rem 0; border: 1px solid var(--border-highlight); background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 70%), var(--bg-card);">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center;">
+    <div>
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+        <span class="badge badge-amber">The Companion Book</span>
+        <span class="badge badge-cyan">{bookData.amazonStatus}</span>
+      </div>
+      <h2 style="margin-bottom: 0.75rem;">{bookData.title}</h2>
+      <p style="color: var(--amber); font-weight: 600; font-size: 1.1rem; margin-bottom: 1.25rem;">
+        {bookData.subtitle}
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.75rem;">
+        {bookData.synopsis}
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-primary">
+          Order on Amazon ↗
+        </a>
+        <a href="/book" class="btn btn-secondary">
+          Explore Table of Contents &rarr;
+        </a>
+      </div>
+    </div>
+
+    <div style="background: var(--bg-subtle); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem;">
+      <h4 style="color: var(--text-main); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">
+        Inside the 14 Chapters
+      </h4>
+      <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text-muted); line-height: 1.9;">
+        <li><strong style="color: var(--text-main);">Part 1:</strong> The Fallacy of the Job Board Lottery</li>
+        <li><strong style="color: var(--text-main);">Part 2:</strong> The Discipline of Learning in Public</li>
+        <li><strong style="color: var(--text-main);">Part 3:</strong> The Waterfall Content Engine</li>
+        <li><strong style="color: var(--text-main);">Part 4:</strong> Community as an Engine of Generosity</li>
+        <li><strong style="color: var(--text-main);">Part 5:</strong> Career Sovereignty & Long-Term Curiosity</li>
+      </ul>
+      <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-faint);">
+        Specifications: {bookData.pageCount} Pages &bull; {bookData.trimSize} Print Edition &bull; By Alex Merced
+      </div>
+    </div>
+  </div>
+</section>

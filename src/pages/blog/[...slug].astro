@@ -1,0 +1,49 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SocialCTAs from '../../components/SocialCTAs.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base
+  title={`${post.data.title} — Alex Merced`}
+  description={post.data.description}
+>
+  <article class="shell" style="padding: 4rem 0 2rem; max-width: 800px;">
+    <div style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem;">
+      <a href="/blog" style="font-size: 0.85rem; font-weight: 600; color: var(--text-faint);">&larr; Back to all essays</a>
+      <h1 style="margin: 1rem 0 0.75rem; font-size: clamp(2rem, 4vw, 2.8rem);">{post.data.title}</h1>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; color: var(--text-faint); font-size: 0.9rem;">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {new Date(post.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <span>&bull;</span>
+        <span>By Alex Merced</span>
+        <span>&bull;</span>
+        <div style="display: flex; gap: 0.4rem;">
+          {post.data.tags.map((tag: string) => (
+            <span class="badge badge-cyan" style="font-size: 0.7rem;">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-main);">
+      <Content />
+    </div>
+
+    <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+      <SocialCTAs />
+    </div>
+  </article>
+</Base>

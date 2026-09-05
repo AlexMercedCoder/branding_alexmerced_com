@@ -1,0 +1,192 @@
+---
+import Base from '../layouts/Base.astro';
+import BookSpotlight from '../components/BookSpotlight.astro';
+import SocialCTAs from '../components/SocialCTAs.astro';
+import { socialLinks } from '../data/network';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+---
+
+<Base>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="shell hero-content">
+      <span class="badge badge-amber" style="margin-bottom: 1rem;">The Engineering Perspective on Branding</span>
+      <h1 class="hero-title">
+        Build an Unignorable Personal Brand on <span>Proof of Work</span>.
+      </h1>
+      <p class="hero-lead">
+        Stop relying on a two-page PDF resume in an automated lottery. Discover how technical practitioners, career switchers, and creators engineer inbound career gravity through public artifacts, systematic output, and authentic community.
+      </p>
+
+      <div class="hero-actions">
+        <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-primary">
+          Join My Substack Newsletter ↗
+        </a>
+        <a href="/book" class="btn btn-secondary">
+          The Book: Reputation as Code &rarr;
+        </a>
+        <a href="/audit" class="btn btn-secondary">
+          Take Brand Audit &rarr;
+        </a>
+      </div>
+
+      <div class="social-pills">
+        <span style="font-size: 0.85rem; color: var(--text-faint); margin-right: 0.5rem;">Follow updates on:</span>
+        <a href={socialLinks.linkedin} target="_blank" rel="noopener" class="social-pill">LinkedIn</a>
+        <a href={socialLinks.x} target="_blank" rel="noopener" class="social-pill">X (@alexmercedcoder)</a>
+        <a href={socialLinks.youtube} target="_blank" rel="noopener" class="social-pill">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Case Study / Proof of Concept -->
+  <section class="shell" style="padding: 4rem 0;">
+    <div style="max-width: 750px; margin-bottom: 2.5rem;">
+      <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">Lived Experience</span>
+      <h2>The Proof-of-Work Timeline</h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        This framework was not invented in a marketing boardroom. It is the exact playbook Alex Merced used to transition from financial education and civic campaigns into tech in his mid-30s, ultimately authoring flagship books for O'Reilly and serving as Head of Developer Relations at Dremio.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <h4 style="color: var(--amber); margin-bottom: 0.25rem;">2009 – 2018: The Non-Linear Foundation</h4>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Taught securities licensing and economic principles to thousands of professionals. Ran for public office in New York, learning public debate, grassroots organizing, and high-stakes communication.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <h4 style="color: var(--cyan); margin-bottom: 0.25rem;">2019: The 34-Year-Old Career Reboot</h4>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Enrolled in General Assembly's Software Engineering Immersive. Rejected traditional quiet studying: immediately began documenting beginner lessons, publishing video walkthroughs, and shipping open-source utilities.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <h4 style="color: var(--emerald); margin-bottom: 0.25rem;">2020 – 2021: The Compounding Content Engine</h4>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Produced hundreds of coding tutorials, launched web development podcasts, and taught software engineering at General Assembly. Proof of work led directly to inbound recruitment into Developer Relations.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <h4 style="color: var(--violet); margin-bottom: 0.25rem;">2022 – Present: Industry Authority & Authorship</h4>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Head of Developer Relations at Dremio. Winner of the inaugural Dremio CEO Award (2025). Co-author of <em>Apache Iceberg: The Definitive Guide</em> (O'Reilly), <em>Apache Polaris: The Definitive Guide</em> (O'Reilly), and <em>Architecting an Apache Iceberg Lakehouse</em> (Manning).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 4 Pillars of the Framework -->
+  <section class="shell" style="padding: 2rem 0 4rem;">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+      <span class="badge badge-amber" style="margin-bottom: 0.5rem;">The Architecture</span>
+      <h2>The Four Pillars of Reputation as Code</h2>
+      <p style="color: var(--text-muted);">
+        A systematic alternative to shallow vanity networking and resume submission black holes.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🛠️</div>
+        <h3 style="margin-bottom: 0.5rem;">1. Proof of Work > Posturing</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Anyone can paste buzzwords into a resume or write platitudes on social media. Durable career security comes from shipping verifiable artifacts: working code, reproducible benchmarks, structured tutorials, and clear diagrams.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">⚙️</div>
+        <h3 style="margin-bottom: 0.5rem;">2. The Compound Content Engine</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Willpower expires; systems endure. Learn how to capture insights during your everyday work and repurpose a single project into blog posts, video walkthroughs, slide decks, and conference talk proposals without burning out.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🔀</div>
+        <h3 style="margin-bottom: 0.5rem;">3. The Cross-Discipline Advantage</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Your previous background in teaching, sales, finance, service, or creative arts is your unfair differentiator. When you intersect deep technical work with clear communication, you operate in an uncontested space.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🤝</div>
+        <h3 style="margin-bottom: 0.5rem;">4. Community Through Generosity</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Transactional networking feels hollow because it is hollow. Genuine career gravity is created when you share what you learn, build platforms for peers, host meetups, and celebrate the work of others.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Companion Book Section -->
+  <div class="shell">
+    <BookSpotlight />
+  </div>
+
+  <!-- Interactive Brand Audit CTA Banner -->
+  <section class="shell" style="padding: 2rem 0;">
+    <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; border-color: var(--cyan);">
+      <div>
+        <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">Diagnostic Tool</span>
+        <h3 style="margin-bottom: 0.5rem;">Where Does Your Personal Brand Stand Today?</h3>
+        <p style="color: var(--text-muted); margin: 0; max-width: 600px; font-size: 0.95rem;">
+          Take our 2-minute diagnostic to audit your Artifact Volume, Distribution Engine, and Career Gravity index.
+        </p>
+      </div>
+      <a href="/audit" class="btn btn-primary">
+        Start Free Brand Audit &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Blog / Essays Section -->
+  <section class="shell" style="padding: 4rem 0 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+      <div>
+        <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Insights & Articles</span>
+        <h2>Latest from the Branding Blog</h2>
+      </div>
+      <a href="/blog" style="font-weight: 600; font-size: 0.95rem;">View all posts &rarr;</a>
+    </div>
+
+    <div class="grid-3">
+      {sortedPosts.map((post) => (
+        <article class="card">
+          <div style="display: flex; gap: 0.4rem; margin-bottom: 0.75rem;">
+            {post.data.tags.slice(0, 2).map((tag: string) => (
+              <span class="badge badge-cyan" style="font-size: 0.7rem;">{tag}</span>
+            ))}
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+            {post.data.description}
+          </p>
+          <a href={`/blog/${post.id}`} style="font-size: 0.85rem; font-weight: 600;">
+            Read article &rarr;
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Social & CTAs -->
+  <div class="shell">
+    <SocialCTAs />
+  </div>
+</Base>

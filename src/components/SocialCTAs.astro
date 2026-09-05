@@ -1,0 +1,30 @@
+---
+import { socialLinks } from '../data/network';
+import bookData from '../data/book.json';
+---
+
+<div class="card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(6, 182, 212, 0.06) 100%); border-color: var(--border-highlight); margin: 3rem 0;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
+    <div>
+      <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Connect & Follow</span>
+      <h3 style="margin-bottom: 0.5rem;">Join the Conversation on Substack, LinkedIn & X</h3>
+      <p style="color: var(--text-muted); margin: 0; max-width: 600px;">
+        Subscribe for long-form essays, daily technical notes, career strategies, and updates on the release of <em>Reputation as Code</em>.
+      </p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+      <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-primary">
+        Substack Newsletter ↗
+      </a>
+      <a href={socialLinks.linkedin} target="_blank" rel="noopener" class="btn btn-secondary">
+        LinkedIn ↗
+      </a>
+      <a href={socialLinks.x} target="_blank" rel="noopener" class="btn btn-secondary">
+        X / Twitter ↗
+      </a>
+      <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-secondary" style="border-color: var(--amber); color: var(--amber);">
+        Buy Book on Amazon ↗
+      </a>
+    </div>
+  </div>
+</div>
