@@ -405,4 +405,38 @@ p {
   .audit-container {
     padding: 1.5rem;
   }
+  .book-cover-3d {
+    transform: none !important;
+    max-width: 260px;
+  }
+}
+
+/* 3D Book Cover Presentation */
+.book-cover-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.book-cover-3d {
+  width: 100%;
+  max-width: 310px;
+  height: auto;
+  border-radius: 4px 12px 12px 4px;
+  box-shadow:
+    -8px 0 16px rgba(0, 0, 0, 0.45),
+    0 18px 36px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: rotateY(-8deg) rotateX(2deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.book-cover-3d:hover {
+  transform: rotateY(-1deg) rotateX(0deg) translateY(-6px);
+  box-shadow:
+    -4px 0 20px rgba(0, 0, 0, 0.35),
+    0 24px 48px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(245, 158, 11, 0.4);
 }

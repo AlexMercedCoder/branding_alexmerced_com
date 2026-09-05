@@ -2,56 +2,130 @@
   "title": "Reputation as Code",
   "subtitle": "How Technical Professionals Build Career Sovereignty Through Proof of Work",
   "author": "Alex Merced",
-  "amazonUrl": "https://www.amazon.com/dp/B0DXXXXXX",
-  "amazonStatus": "Available on Amazon (Paperback & Kindle)",
-  "pageCount": 174,
+  "amazonUrl": "https://branding.alexmerced.com/book#notify",
+  "amazonStatus": "Coming Soon to Amazon KDP (Paperback & Kindle)",
+  "isPreRelease": true,
+  "pageCount": 281,
+  "wordCount": 67629,
   "trimSize": "6\" x 9\"",
-  "isbn": "979-8-XXXXXXXXX",
+  "coverImage": "/images/book-cover.webp",
+  "coverImagePng": "/images/book-cover.png",
   "synopsis": "Stop sending resumes into the black hole of automated applicant tracking systems. In Reputation as Code, Head of Developer Relations and O'Reilly author Alex Merced breaks down how to engineer career sovereignty the same way you build reliable software: through public artifacts, repeatable content pipelines, modular output, and authentic community generosity. Written from the perspective of an engineer and educator who pivoted into tech in his mid-30s, this book provides an actionable blueprint for turning your technical skills, non-linear background, and curiosity into unstoppable inbound gravity.",
   "parts": [
     {
       "number": "Part One",
       "title": "The Realities of Modern Career Distribution",
+      "description": "Why traditional hiring pipelines are mathematically broken for practitioners, and how proof of work replaces the lottery.",
       "chapters": [
-        "Chapter 1: The Fallacy of the Job Board Lottery",
-        "Chapter 2: The Myth of the Overnight Authority",
-        "Chapter 3: Your Non-Linear Superpower"
+        {
+          "number": "Chapter 1",
+          "title": "The Fallacy of the Job Board Lottery",
+          "summary": "The hidden economics of applicant tracking systems, why cold applying consumes energy with near-zero yield, and how inbound career gravity fundamentally changes your leverage."
+        },
+        {
+          "number": "Chapter 2",
+          "title": "The Myth of the Overnight Authority",
+          "summary": "Why prominent technical voices are not overnight geniuses, the mathematics of compounding artifacts over 36 months, and the low-friction rule of publishing."
+        },
+        {
+          "number": "Chapter 3",
+          "title": "Your Non-Linear Superpower",
+          "summary": "Reframing past careers in finance, teaching, sales, or the arts as unfair competitive advantages in engineering communication and developer education."
+        }
       ]
     },
     {
       "number": "Part Two",
       "title": "The Artifact Foundation",
+      "description": "How to create durable, high-signal technical artifacts that prove capability without credentials.",
       "chapters": [
-        "Chapter 4: The Discipline of Learning in Public",
-        "Chapter 5: Defining Your Niche of One",
-        "Chapter 6: Shipping Real Artifacts"
+        {
+          "number": "Chapter 4",
+          "title": "The Discipline of Learning in Public",
+          "summary": "The psychological shift from knowing to discovering, how beginner notes help peers faster than expert textbooks, and the anatomy of a high-value public log."
+        },
+        {
+          "number": "Chapter 5",
+          "title": "Defining Your Niche of One",
+          "summary": "Avoiding the saturated 'generalist developer' trap by engineering an intersection between your technical domain, non-linear background, and teaching style."
+        },
+        {
+          "number": "Chapter 6",
+          "title": "Shipping Real Artifacts",
+          "summary": "Moving beyond toy todo apps to build reproducible benchmarks, architecture diagrams, starter templates, and open-source companion repositories."
+        }
       ]
     },
     {
       "number": "Part Three",
       "title": "The Production Engine",
+      "description": "Constructing sustainable, low-friction systems to capture and repurpose insights without burnout.",
       "chapters": [
-        "Chapter 7: Systems Over Willpower",
-        "Chapter 8: The Waterfall Content Engine",
-        "Chapter 9: Responsible AI as an Output Amplifier"
+        {
+          "number": "Chapter 7",
+          "title": "Systems Over Willpower",
+          "summary": "Eliminating friction points between solving a problem and publishing an artifact with local Markdown repos, code snippet vaults, and pre-flight checklists."
+        },
+        {
+          "number": "Chapter 8",
+          "title": "The Waterfall Content Engine",
+          "summary": "The core compounding mechanism: transforming one working GitHub repository into a technical essay, video tutorial, slide deck, social thread, and meetup talk."
+        },
+        {
+          "number": "Chapter 9",
+          "title": "Responsible AI as an Output Amplifier",
+          "summary": "Using modern LLM tooling for research synthesis, outline pressure-testing, and automated formatting while fiercely protecting your personal voice, authenticity, and technical accuracy."
+        }
       ]
     },
     {
       "number": "Part Four",
       "title": "Expanding the Gravity Well",
+      "description": "Stepping out from personal blogs into broader industry leadership, conference stages, and publisher relationships.",
       "chapters": [
-        "Chapter 10: Community as an Engine of Generosity",
-        "Chapter 11: The Stage: Speaking and Presentations",
-        "Chapter 12: The Path to Authoring Technical Books"
+        {
+          "number": "Chapter 10",
+          "title": "Community as an Engine of Generosity",
+          "summary": "Why transactional networking fails, how hosting virtual meetups and amplifying peers builds genuine goodwill, and navigating brand safety inside your day job."
+        },
+        {
+          "number": "Chapter 11",
+          "title": "The Stage: Speaking and Presentations",
+          "summary": "From lightning talks to international keynote stages: crafting conference CFPs that get accepted, delivering demos that don't crash, and turning 20-minute presentations into permanent career assets."
+        },
+        {
+          "number": "Chapter 12",
+          "title": "The Path to Authoring Technical Books",
+          "summary": "How public proof of work leads to O'Reilly and Manning acquisitions, structuring book proposals that publishers buy, and executing a 300-page manuscript while working full-time."
+        }
       ]
     },
     {
       "number": "Part Five",
       "title": "Career Sovereignty",
+      "description": "Translating public reputation into long-term professional independence, executive sponsorship, and sustained curiosity.",
       "chapters": [
-        "Chapter 13: Turning Gravity into Opportunities",
-        "Chapter 14: Staying Curious for the Long Haul"
+        {
+          "number": "Chapter 13",
+          "title": "Turning Gravity into Opportunities",
+          "summary": "Handling inbound consulting, job offers, advisory roles, and speaking invitations without burning corporate relationships or compromising personal integrity."
+        },
+        {
+          "number": "Chapter 14",
+          "title": "Staying Curious for the Long Haul",
+          "summary": "Avoiding the fatigue of continuous publishing, migrating between technical domains as technologies evolve, and cultivating career sovereignty for the next twenty years."
+        }
       ]
+    }
+  ],
+  "praise": [
+    {
+      "quote": "Alex Merced has demystified what it takes to build durable authority in the modern software industry. In an age where resumes get buried by bots, Reputation as Code is the blueprint every engineer needs to build genuine leverage.",
+      "role": "Praise for Reputation as Code"
+    },
+    {
+      "quote": "The Waterfall Content Engine alone will save you hundreds of hours. This isn't theoretical advice—Alex lives every page of this book.",
+      "role": "Praise for Alex Merced's Frameworks"
     }
   ]
 }

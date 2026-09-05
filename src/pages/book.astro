@@ -2,111 +2,237 @@
 import Base from '../layouts/Base.astro';
 import SocialCTAs from '../components/SocialCTAs.astro';
 import bookData from '../data/book.json';
+import { socialLinks } from '../data/network';
 ---
 
 <Base
   title={`${bookData.title} by Alex Merced — Career Sovereignty Through Proof of Work`}
   description={bookData.synopsis}
 >
-  <div class="shell" style="padding: 4rem 0 2rem;">
-    <!-- Book Header -->
-    <div style="max-width: 800px; margin-bottom: 3.5rem;">
-      <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-        <span class="badge badge-amber">Non-Fiction Book</span>
-        <span class="badge badge-cyan">{bookData.amazonStatus}</span>
+  <div class="shell" style="padding: 3.5rem 0 2rem;">
+    
+    <!-- Hero Section: Cover + Book Intro -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3.5rem; align-items: center; margin-bottom: 4rem;">
+      
+      <!-- 3D Book Cover -->
+      <div class="book-cover-wrapper">
+        <picture>
+          <source srcset="/images/book-cover.webp" type="image/webp" />
+          <img
+            src="/images/book-cover.png"
+            alt="Reputation as Code book cover by Alex Merced"
+            class="book-cover-3d"
+            width="340"
+            height="510"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
-      <h1 style="margin-bottom: 0.75rem;">{bookData.title}</h1>
-      <p style="font-size: 1.3rem; color: var(--amber); font-weight: 600; margin-bottom: 1.5rem;">
-        {bookData.subtitle}
-      </p>
-      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
-        {bookData.synopsis}
-      </p>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-        <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.85rem 1.8rem;">
-          Order on Amazon ↗
-        </a>
-        <a href="#table-of-contents" class="btn btn-secondary">
-          View Table of Contents &darr;
-        </a>
+      <!-- Hero Details -->
+      <div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+          <span class="badge badge-amber">Official Book</span>
+          <span class="badge badge-cyan">{bookData.amazonStatus}</span>
+        </div>
+        
+        <h1 style="margin-bottom: 0.75rem; font-size: clamp(2.2rem, 4vw, 3.2rem);">
+          {bookData.title}
+        </h1>
+        
+        <p style="font-size: 1.25rem; color: var(--amber); font-weight: 600; line-height: 1.35; margin-bottom: 1.5rem;">
+          {bookData.subtitle}
+        </p>
+        
+        <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+          {bookData.synopsis}
+        </p>
+
+        <!-- CTAs -->
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+          <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.85rem 1.8rem;">
+            Get Launch Alert on Substack ↗
+          </a>
+          <a href="#table-of-contents" class="btn btn-secondary">
+            View All 14 Chapters &darr;
+          </a>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--text-faint); margin: 0;">
+          * Amazon KDP Paperback & Kindle direct order links will be activated here immediately upon store approval.
+        </p>
       </div>
+
     </div>
 
     <!-- Book Specs Grid -->
-    <div class="card" style="margin-bottom: 4rem; background: var(--bg-subtle);">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; text-align: center;">
+    <div class="card" style="margin-bottom: 4.5rem; background: var(--bg-subtle); border-color: var(--border);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; text-align: center;">
         <div>
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Format</div>
-          <strong style="color: var(--text-main); font-size: 1.1rem;">Paperback & Kindle</strong>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-faint); margin-bottom: 0.35rem;">Print Length</div>
+          <strong style="color: var(--text-main); font-size: 1.2rem;">{bookData.pageCount} Pages</strong>
         </div>
         <div>
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Page Count</div>
-          <strong style="color: var(--text-main); font-size: 1.1rem;">{bookData.pageCount} Pages</strong>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-faint); margin-bottom: 0.35rem;">Format</div>
+          <strong style="color: var(--text-main); font-size: 1.2rem;">Trade & Kindle</strong>
         </div>
         <div>
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Trim Size</div>
-          <strong style="color: var(--text-main); font-size: 1.1rem;">{bookData.trimSize} Trade</strong>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-faint); margin-bottom: 0.35rem;">Trim Size</div>
+          <strong style="color: var(--text-main); font-size: 1.2rem;">{bookData.trimSize} Standard</strong>
         </div>
         <div>
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.25rem;">Author</div>
-          <strong style="color: var(--text-main); font-size: 1.1rem;">{bookData.author}</strong>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-faint); margin-bottom: 0.35rem;">Scope</div>
+          <strong style="color: var(--text-main); font-size: 1.2rem;">14 Chapters</strong>
+        </div>
+        <div>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-faint); margin-bottom: 0.35rem;">Author</div>
+          <strong style="color: var(--text-main); font-size: 1.2rem;">{bookData.author}</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- The 4 Axioms of Reputation as Code -->
+    <div style="margin-bottom: 4.5rem;">
+      <div style="max-width: 700px; margin-bottom: 2rem;">
+        <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Core Mental Model</span>
+        <h2>The Four Axioms of the Framework</h2>
+        <p style="color: var(--text-muted);">
+          Traditional career advice tells you to tweak bullet points and network aggressively. <em>Reputation as Code</em> treats career discovery as a distributed systems engineering challenge:
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 style="color: var(--amber); margin-bottom: 0.5rem;">1. Proof of Work Over Paper Claims</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+            A claim on a resume is unverified metadata. A running GitHub repository, an architecture diagram, or a reproducible benchmark is cryptographic proof of capability.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">2. Modular, Compounding Artifacts</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+            You don't need one monumental viral project. You ship focused, modular assets that compound in value over months and years like interest in an index fund.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--emerald); margin-bottom: 0.5rem;">3. Automated Intake, Zero-Friction Output</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+            Willpower fails under deadline pressure. Sustainable creators build friction-free capture pipelines into their daily engineering work, turning daily bug fixes into permanent guides.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--violet); margin-bottom: 0.5rem;">4. Inbound Gravitational Pull</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
+            When you solve real technical problems publicly, recruiters, publishers, and collaborators search for answers and find you. You switch from chasing opportunities to filtering them.
+          </p>
         </div>
       </div>
     </div>
 
     <!-- Who This Book Is For -->
-    <div style="margin-bottom: 4rem;">
+    <div style="margin-bottom: 4.5rem;">
       <h2 style="margin-bottom: 1.5rem;">Who This Book Is For</h2>
       <div class="grid-3">
         <div class="card">
           <h4 style="color: var(--amber); margin-bottom: 0.5rem;">Software & Data Engineers</h4>
           <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
-            Developers who want to be recognized for high-caliber technical work without becoming cringey social media influencers.
+            Engineers who want their technical caliber recognized by industry peers and high-tier teams without engaging in shallow social media posturing.
           </p>
         </div>
         <div class="card">
           <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">Career Switchers</h4>
           <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
-            Professionals pivoting into technology from finance, teaching, retail, or the arts who need to prove capability without an Ivy League CS degree.
+            Professionals pivoting into technology from finance, teaching, retail, sales, or the arts who need to prove real capability without a Stanford computer science pedigree.
           </p>
         </div>
         <div class="card">
           <h4 style="color: var(--emerald); margin-bottom: 0.5rem;">DevRel & Technical Educators</h4>
           <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
-            Advocates and creators looking to build repeatable content engines, pitch major tech publishers, and establish enduring industry authority.
+            Advocates and creators seeking to operationalize the Waterfall Content Engine, secure major book contracts with O'Reilly or Manning, and speak on international stages.
           </p>
         </div>
       </div>
     </div>
 
     <!-- Table of Contents Breakdown -->
-    <div id="table-of-contents" style="margin-bottom: 4rem;">
-      <h2 style="margin-bottom: 0.75rem;">Full Table of Contents</h2>
-      <p style="color: var(--text-muted); margin-bottom: 2rem;">
-        Five parts and fourteen actionable chapters designed to take you from cold resume applications to compounding inbound gravity.
-      </p>
+    <div id="table-of-contents" style="margin-bottom: 4.5rem;">
+      <div style="max-width: 750px; margin-bottom: 2.5rem;">
+        <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Complete Outline</span>
+        <h2>Inside the 14 Chapters</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Divided into five structured phases covering the complete journey from automated resume filtering to absolute career sovereignty.
+        </p>
+      </div>
 
-      <div style="display: grid; gap: 1.5rem;">
+      <div style="display: grid; gap: 2rem;">
         {bookData.parts.map((part) => (
-          <div class="card">
-            <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.75rem;">
-              <span class="badge badge-amber">{part.number}</span>
-              <h3 style="margin: 0; font-size: 1.3rem;">{part.title}</h3>
+          <div class="card" style="padding: 2rem;">
+            <div style="margin-bottom: 1.25rem;">
+              <span class="badge badge-amber" style="font-size: 0.75rem; margin-bottom: 0.4rem;">{part.number}</span>
+              <h3 style="margin: 0.25rem 0 0.5rem; font-size: 1.4rem;">{part.title}</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">{part.description}</p>
             </div>
-            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-muted);">
+
+            <div style="display: grid; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
               {part.chapters.map((ch) => (
-                <li style="display: flex; align-items: center; gap: 0.5rem;">
-                  <span style="color: var(--cyan);">&bull;</span> {ch}
-                </li>
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: baseline;">
+                  <span style="color: var(--cyan); font-weight: 700; font-size: 0.9rem; white-space: nowrap;">
+                    {ch.number}
+                  </span>
+                  <div>
+                    <h4 style="margin: 0 0 0.25rem; font-size: 1.05rem; color: var(--text-main);">
+                      {ch.title}
+                    </h4>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.55;">
+                      {ch.summary}
+                    </p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>
     </div>
 
-    <!-- Social & Purchase CTA -->
+    <!-- Praise & Endorsements -->
+    {bookData.praise && bookData.praise.length > 0 && (
+      <div style="margin-bottom: 4.5rem;">
+        <h2 style="margin-bottom: 1.5rem;">Early Reader Feedback</h2>
+        <div class="grid-2">
+          {bookData.praise.map((item) => (
+            <div class="card" style="border-left: 3px solid var(--amber); font-style: italic;">
+              <p style="color: var(--text-main); font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.75rem;">
+                "{item.quote}"
+              </p>
+              <div style="font-style: normal; font-size: 0.85rem; color: var(--amber); font-weight: 600;">
+                — {item.role}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Pre-Release Notification Banner -->
+    <div class="card" style="padding: 2.5rem; text-align: center; border-color: var(--amber); background: radial-gradient(circle at center, rgba(245, 158, 11, 0.08), transparent 70%), var(--bg-card); margin-bottom: 4rem;">
+      <h3 style="margin-bottom: 0.75rem;">Be First to Know When the Book Drops</h3>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 1rem;">
+        The paperback and Kindle editions are currently in production review. Subscribe to Alex's Substack or connect on LinkedIn to receive the direct Amazon purchase link the hour it goes live.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-primary">
+          Subscribe on Substack ↗
+        </a>
+        <a href={socialLinks.linkedin} target="_blank" rel="noopener" class="btn btn-secondary">
+          Connect on LinkedIn ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Social Links Section -->
     <SocialCTAs />
+
   </div>
 </Base>
