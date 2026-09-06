@@ -1,5 +1,5 @@
 ---
-import { socialLinks, networkSites } from '../data/network';
+import { socialLinks, networkSites, newsletters, communityEvents } from '../data/network';
 ---
 
 <footer class="site-footer">
@@ -38,22 +38,115 @@ import { socialLinks, networkSites } from '../data/network';
       </div>
 
       <div>
-        <h4 style="color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Network</h4>
+        <h4 style="color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Flagship Resources</h4>
         <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 2;">
-          {networkSites.map((site) => (
-            <li>
-              <a href={site.url} target="_blank" rel="noopener">
-                {site.title}
-              </a>
-            </li>
-          ))}
+          <li><a href="https://alexmerced.com" target="_blank" rel="noopener">AlexMerced.com</a></li>
+          <li><a href="https://books.alexmerced.com" target="_blank" rel="noopener">Books by Alex Merced</a></li>
+          <li><a href="https://alexmercedcoder.dev" target="_blank" rel="noopener">AlexMercedCoder.dev</a></li>
+          <li><a href="https://opendatalakehouse.com" target="_blank" rel="noopener">OpenDataLakehouse.com</a></li>
+          <li><a href="https://whoisalexmerced.com" target="_blank" rel="noopener">WhoIsAlexMerced.com</a></li>
         </ul>
       </div>
     </div>
 
+    <!-- Network Runs -->
+    <nav class="footer__run" aria-label="The Alex Merced Network">
+      <div class="footer__run-title">The Alex Merced Network</div>
+      <ul class="footer__run-list">
+        {networkSites.map((site) => (
+          <li>
+            <a href={site.url} target="_blank" rel="noopener">
+              {site.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav class="footer__run" aria-label="Free weekly newsletters">
+      <div class="footer__run-title">Free Weekly Newsletters</div>
+      <ul class="footer__run-list">
+        {newsletters.map((nl) => (
+          <li>
+            <a href={nl.url} target="_blank" rel="noopener">
+              {nl.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav class="footer__run" aria-label="Events and community">
+      <div class="footer__run-title">Events &amp; Community</div>
+      <ul class="footer__run-list">
+        {communityEvents.map((ev) => (
+          <li>
+            <a href={ev.url} target="_blank" rel="noopener">
+              {ev.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
     <div class="footer-bottom">
       <div>&copy; {new Date().getFullYear()} Alex Merced. All rights reserved.</div>
-      <div>Built with Astro 7 &bull; Part of the Alex Merced Network</div>
+      <div>Built with Astro &bull; Part of the Alex Merced Network</div>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer__run {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    margin-bottom: 1.25rem;
+  }
+  .footer__run-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+  }
+  .footer__run-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer__run-list a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer__run-list a:hover {
+    color: #ffffff;
+  }
+  .footer__run-list li + li:before {
+    content: "·";
+    margin-right: 0.65rem;
+    color: var(--text-faint);
+  }
+  @media (max-width: 640px) {
+    .footer__run-list {
+      gap: 8px;
+    }
+    .footer__run-list li + li:before {
+      content: none !important;
+      margin-right: 0 !important;
+    }
+    .footer__run-list a {
+      display: block;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 13px;
+    }
+  }
+</style>

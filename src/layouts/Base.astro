@@ -29,7 +29,7 @@ const ogImageURL = new URL(image, Astro.site);
 // Base Schema Graph (Alex Merced + branding.alexmerced.com)
 const defaultPersonSchema = {
   "@type": "Person",
-  "@id": "https://branding.alexmerced.com/#alexmerced",
+  "@id": "https://alexmerced.com/#alexmerced",
   "name": "Alex Merced",
   "jobTitle": "Head of Developer Relations",
   "worksFor": {
@@ -58,7 +58,7 @@ const defaultWebSiteSchema = {
   "name": "branding.alexmerced.com",
   "description": "The engineering and practitioner blueprint for personal branding, proof of work, and career sovereignty by Alex Merced.",
   "publisher": {
-    "@id": "https://branding.alexmerced.com/#alexmerced"
+    "@id": "https://alexmerced.com/#alexmerced"
   },
   "inLanguage": "en-US"
 };
@@ -113,7 +113,7 @@ const fullStructuredData = {
       <meta property="article:tag" content={tag} />
     ))}
     {article && (
-      <meta property="article:author" content="https://branding.alexmerced.com/#alexmerced" />
+      <meta property="article:author" content="https://alexmerced.com/#alexmerced" />
     )}
 
     <!-- Twitter / X -->
@@ -141,5 +141,8 @@ const fullStructuredData = {
       <slot />
     </main>
     <SiteFooter />
+    <!-- WebMCP: exposes read-only tools to browser AI agents -->
+    <script src="/webmcp/alex-merced-webmcp.js" defer></script>
+    <script src="/webmcp/init.js" defer></script>
   </body>
 </html>
