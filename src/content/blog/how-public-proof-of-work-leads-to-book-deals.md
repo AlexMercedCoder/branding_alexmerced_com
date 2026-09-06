@@ -18,9 +18,9 @@ In reality, technical publishing is governed by a simple equation: **Proof of Ca
 
 Publishing editors do not sit at their desks waiting for unsolicited 80-page proposals to land in their inbox. They spend their working days monitoring technical discourse on GitHub, Substack, Medium, Hacker News, and practitioner communities.
 
-When I signed deals with O'Reilly for *Apache Iceberg: The Definitive Guide* and *Apache Polaris: The Definitive Guide*, it was not because I cold-pitched an abstract theory. 
+When I signed deals with O'Reilly for [*Apache Iceberg: The Definitive Guide*](https://books.alexmerced.com/books/apache-iceberg-the-definitive-guide/) and [*Apache Polaris: The Definitive Guide*](https://books.alexmerced.com/books/apache-polaris-the-definitive-guide/), it was not because I cold-pitched an abstract theory. 
 
-It was because I had already published dozens of focused, practical essays dissecting table format metadata. I had built open-source companion repositories where developers could test catalog implementations in Docker. 
+It was because I had already published dozens of focused, practical essays dissecting table format metadata across [IcebergLakehouse.com](https://iceberglakehouse.com) and [OpenDataLakehouse.com](https://opendatalakehouse.com). I had built open-source companion repositories and developer guides on [AlexMercedCoder.dev](https://alexmercedcoder.dev) where engineers could test catalog implementations in Docker. 
 
 When an editor investigated the lakehouse space, my proof of work was already ranking at the top of search results.
 

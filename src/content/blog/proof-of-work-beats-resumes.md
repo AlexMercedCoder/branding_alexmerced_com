@@ -12,6 +12,11 @@ Submitting resumes to job boards is an outbound lottery. You send an unverified 
 
 There is a better model: **Proof of Work**.
 
+> **Key Takeaways & Core Thesis**:
+> - **Resumes are unverified declarations; public artifacts are inspectable evidence.**
+> - Submitting PDF resumes to automated ATS pipelines is an outbound lottery with diminishing returns.
+> - Shipping public code repositories, technical essays, benchmarks, and explainers transforms career discovery from cold outbound applications to inbound recruiter and collaborator gravity.
+
 ## Declarations vs. Evidence
 
 A resume is a list of declarations. You claim that you understand distributed architectures, full-stack frameworks, or developer advocacy. But declarations require trust that a recruiter does not yet have.
@@ -28,4 +33,4 @@ When you build public artifacts, something fundamental changes:
 2. **Opportunities become inbound:** When hiring managers, founders, and conference organizers discover your artifacts in the wild, they approach you. You skip the initial queue entirely.
 3. **Interviews start at trust:** When you walk into an interview with an established body of public work, the conversation shifts from "Can this person do the job?" to "How do we work together?"
 
-Stop relying solely on a two-page PDF to represent your intellect. Build artifacts, document what you learn, and let your reputation work for you around the clock.
+Stop relying solely on a two-page PDF to represent your intellect. Build artifacts, document what you learn, and let your reputation work for you around the clock. (See how this philosophy powers the public portfolio and proof of work across [WhoIsAlexMerced.com](https://whoisalexmerced.com) and the central ecosystem at [AlexMerced.com](https://alexmerced.com).)

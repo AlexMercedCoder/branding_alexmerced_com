@@ -99,4 +99,6 @@ If your podcast connects you with twenty prominent engineering directors, founde
 
 Stop worrying about whether you will become the next Joe Rogan or Lex Fridman. Build a lightweight, sustainable show, invite the practitioners you genuinely admire, and let your podcast become the most enjoyable networking engine of your career.
 
+*(For practical examples of lightweight, highly focused technical podcast formats, browse Alex Merced's active audio shows across Developer Advocacy and Data Engineering at [AlexMercedMedia.com/podcasts](https://alexmercedmedia.com/podcasts).)*
+
 *Adapted from the frameworks in **Reputation as Code: How Technical Professionals Build Career Sovereignty Through Proof of Work** by Alex Merced.*
