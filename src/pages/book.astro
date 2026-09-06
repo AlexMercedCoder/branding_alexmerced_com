@@ -23,7 +23,13 @@ const bookSchema = {
   "datePublished": "2026",
   "description": bookData.synopsis,
   "image": "https://branding.alexmerced.com/images/book-cover.png",
-  "url": "https://branding.alexmerced.com/book"
+  "url": bookData.amazonUrl,
+  "sameAs": bookData.amazonUrl,
+  "offers": {
+    "@type": "Offer",
+    "url": bookData.amazonUrl,
+    "availability": "https://schema.org/InStock"
+  }
 };
 
 const breadcrumbSchema = {
@@ -93,8 +99,8 @@ const breadcrumbSchema = {
 
         <!-- CTAs -->
         <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
-          <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.85rem 1.8rem;">
-            Get Launch Alert on Substack ↗
+          <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.85rem 1.8rem;">
+            Order on Amazon (Paperback & Kindle) ↗
           </a>
           <a href="#table-of-contents" class="btn btn-secondary">
             View All 14 Chapters &darr;
@@ -102,7 +108,7 @@ const breadcrumbSchema = {
         </div>
 
         <p style="font-size: 0.85rem; color: var(--text-faint); margin: 0;">
-          * Amazon KDP Paperback & Kindle direct order links will be activated here immediately upon store approval.
+          * Available now worldwide on Amazon in Trade Paperback (6" x 9") and Kindle eBook.
         </p>
       </div>
 
@@ -257,18 +263,19 @@ const breadcrumbSchema = {
       </div>
     )}
 
-    <!-- Pre-Release Notification Banner -->
-    <div class="card" style="padding: 2.5rem; text-align: center; border-color: var(--amber); background: radial-gradient(circle at center, rgba(245, 158, 11, 0.08), transparent 70%), var(--bg-card); margin-bottom: 4rem;">
-      <h3 style="margin-bottom: 0.75rem;">Be First to Know When the Book Drops</h3>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 1rem;">
-        The paperback and Kindle editions are currently in production review. Subscribe to Alex's Substack or connect on LinkedIn to receive the direct Amazon purchase link the hour it goes live.
+    <!-- Amazon Order Banner -->
+    <div class="card" style="padding: 2.75rem 2rem; text-align: center; border-color: var(--amber); background: radial-gradient(circle at center, rgba(245, 158, 11, 0.08), transparent 70%), var(--bg-card); margin-bottom: 4rem;">
+      <span class="badge badge-cyan" style="margin-bottom: 0.75rem;">Now Available Worldwide</span>
+      <h3 style="margin-bottom: 0.75rem;">Get Your Copy of Reputation as Code</h3>
+      <p style="color: var(--text-muted); max-width: 620px; margin: 0 auto 1.75rem; font-size: 1rem; line-height: 1.6;">
+        The official paperback and Kindle editions are live on Amazon. Pick up your copy and start engineering your career sovereignty through public proof of work.
       </p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-primary">
-          Subscribe on Substack ↗
+        <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.85rem 2rem;">
+          Order on Amazon ↗
         </a>
-        <a href={socialLinks.linkedin} target="_blank" rel="noopener" class="btn btn-secondary">
-          Connect on LinkedIn ↗
+        <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-secondary">
+          Join the Substack Newsletter ↗
         </a>
       </div>
     </div>

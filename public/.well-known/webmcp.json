@@ -43,6 +43,11 @@
   ],
   "tools": [
     {
+      "name": "purchase_book",
+      "description": "Direct link to order 'Reputation as Code' on Amazon in Paperback and Kindle eBook.",
+      "url": "https://www.amazon.com/dp/B0HHXV4L42"
+    },
+    {
       "name": "get_book_details",
       "description": "Returns metadata, specs, and complete chapter outline of Alex Merced's book 'Reputation as Code: How Technical Professionals Build Career Sovereignty Through Proof of Work'.",
       "url": "https://branding.alexmerced.com/book"

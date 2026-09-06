@@ -27,8 +27,8 @@ The traditional two-page PDF resume submitted to automated applicant tracking sy
 ## The Companion Book: Reputation as Code
 - Title: ${bookData.title}: ${bookData.subtitle}
 - Author: ${bookData.author} (Head of Developer Relations at Dremio)
-- Specifications: 281 pages, 6" x 9" Trade Paperback & EPUB 3 (67,629 words across 14 chapters)
-- Availability: Coming Soon to Amazon KDP (Paperback & Kindle)
+- Availability: Available on Amazon (Paperback & Kindle)
+- Purchase URL: ${bookData.amazonUrl}
 - Overview Page: ${SITE}/book
 - Synopsis: ${bookData.synopsis}
 

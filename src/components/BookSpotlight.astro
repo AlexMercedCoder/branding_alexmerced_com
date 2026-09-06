@@ -57,11 +57,11 @@ import { socialLinks } from '../data/network';
       </div>
 
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-        <a href="/book" class="btn btn-primary">
-          Explore All 14 Chapters &rarr;
+        <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-primary">
+          Order on Amazon ↗
         </a>
-        <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-secondary">
-          Get Release Alert on Substack ↗
+        <a href="/book" class="btn btn-secondary">
+          Explore All 14 Chapters &rarr;
         </a>
       </div>
     </div>
