@@ -8,7 +8,7 @@ featured: true
 
 There is immense authority packed into the simple sentence: *"He wrote the book on that topic."*
 
-Authoring a definitive technical guide for respected publishers like O'Reilly Media or Manning fundamentally elevates your career trajectory. It opens international keynote stages, cements executive credibility, and creates a durable intellectual asset that works for you for decades.
+Authoring a definitive technical guide for respected publishers like O'Reilly Media or Manning fundamentally accelerates your career trajectory. It opens international keynote stages, cements executive credibility, and creates a durable intellectual asset that works for you for decades.
 
 Yet the vast majority of engineers believe that getting a book deal requires an invitation from an ivory tower or an elite academic post.
 
@@ -32,6 +32,6 @@ If you want to author technical books, you don't start by writing Chapter 1 in p
 2. **The Companion Codebase:** Maintain clean, tested GitHub repositories that prove your code works in the real world.
 3. **The Audience Signal:** Demonstrate that actual developers read, star, fork, and comment on your guides.
 
-When you approach a publisher—or when their acquisitions team inevitably reaches out to you—your proposal is no longer an unverified speculation. It is a field-tested blueprint with verified market interest.
+When you approach a publisher, or when their acquisitions team reaches out to you, your proposal is no longer an unverified speculation. It is a field-tested blueprint with verified market interest.
 
 *Adapted from Chapter 12 of **Reputation as Code: How Technical Professionals Build Career Sovereignty Through Proof of Work** by Alex Merced.*

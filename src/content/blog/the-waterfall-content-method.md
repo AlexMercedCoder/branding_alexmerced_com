@@ -17,7 +17,7 @@ To maintain prolific output over years without burning out, you need a system. I
 Instead of inventing five different topics, start with one deep, hands-on project or genuine learning inquiry. Let everything else flow naturally downstream:
 
 1. **The Foundation (The Code / Prototype):** You build a small tool, test an open-source library, or benchmark a new framework.
-2. **The Deep Dive (The Technical Article):** You write a comprehensive walkthrough detailing how you solved the problem, including the errors you ran into and how you fixed them.
+2. **The In-Depth Walkthrough (The Technical Article):** You write a comprehensive guide detailing how you solved the problem, including the errors you ran into and how you fixed them.
 3. **The Visual Demo (Video Walkthrough):** You record a 10-minute screen recording walking through the repository and explaining the architectural trade-offs.
 4. **The Discussion (Podcast / Audio):** You discuss the broader industry implications of that technology on your podcast or audio notes.
 5. **The Presentation (CFP / Deck):** You summarize the findings into a slide deck and submit it as a conference talk abstract.

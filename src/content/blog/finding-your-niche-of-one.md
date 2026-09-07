@@ -17,8 +17,8 @@ The goal is not to become the world's greatest computer scientist across all dom
 Your Niche of One sits at the intersection of three distinct variables:
 
 1. **A Specific Technical Anchor:** A durable, high-impact technology domain that has genuine industry demand (e.g., Apache Iceberg, modern WebAssembly runtimes, distributed event streaming).
-2. **A Non-Linear Superpower:** Your background before or outside software engineering—whether that is financial licensing education, high school biology teaching, debate coaching, or technical sales.
-3. **A Distinct Pedagogical Style:** The specific way you explain complex ideas—whether through architectural whiteboard diagrams, rapid hands-on terminal demos, or empathetic first-principles breakdowns.
+2. **A Non-Linear Advantage:** Your background before or outside software engineering, such as financial licensing education, high school biology teaching, debate coaching, or technical sales.
+3. **A Distinct Pedagogical Style:** The specific way you explain complex ideas, such as architectural whiteboard diagrams, rapid hands-on terminal demos, or clear first-principles breakdowns.
 
 When I entered software engineering in my mid-thirties, I didn't try to brand myself as "The Generic Data Guy." 
 

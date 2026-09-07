@@ -52,7 +52,7 @@ const breadcrumbSchema = {
 ---
 
 <Base
-  title={`${bookData.title} by Alex Merced — Career Sovereignty Through Proof of Work`}
+  title={`${bookData.title} by Alex Merced | Career Sovereignty Through Proof of Work`}
   description={bookData.synopsis}
   image="/images/book-cover.png"
   schema={[bookSchema, breadcrumbSchema]}
@@ -209,7 +209,7 @@ const breadcrumbSchema = {
         <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Complete Outline</span>
         <h2>Inside the 14 Chapters</h2>
         <p style="color: var(--text-muted); font-size: 1.05rem;">
-          Divided into five structured phases covering the complete journey from automated resume filtering to absolute career sovereignty.
+          Divided into five structured phases covering the complete progression from automated resume filtering to absolute career sovereignty.
         </p>
       </div>
 
@@ -255,7 +255,7 @@ const breadcrumbSchema = {
                 "{item.quote}"
               </p>
               <div style="font-style: normal; font-size: 0.85rem; color: var(--amber); font-weight: 600;">
-                — {item.role}
+                {item.role}
               </div>
             </div>
           ))}

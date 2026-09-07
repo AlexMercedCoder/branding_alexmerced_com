@@ -9,7 +9,7 @@ export const GET: APIRoute = async () => {
   const posts = await getCollection('blog');
   const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-  const body = `# branding.alexmerced.com — Build an Unignorable Personal Brand on Proof of Work
+  const body = `# branding.alexmerced.com: Build an Unignorable Personal Brand on Proof of Work
 
 > The engineering and practitioner perspective on personal branding, career sovereignty, and learning in public by Alex Merced: Head of Developer Relations at Dremio, recipient of the inaugural 2025 Dremio CEO Award, and author of definitive volumes for O'Reilly Media and Manning.
 
@@ -22,7 +22,7 @@ The traditional two-page PDF resume submitted to automated applicant tracking sy
 1. Proof of Work > Posturing: Working GitHub repositories, reproducible benchmarks, structured tutorials, and clear diagrams beat unverified resume claims.
 2. The Compound Content Engine: The Waterfall Method turns one core technical project into essays, videos, podcast topics, social threads, and conference talks without burnout.
 3. The Cross-Discipline Advantage: Non-linear backgrounds (finance, teaching, sales, customer service, arts) are unfair competitive differentiators when fused with engineering.
-4. Community Through Generosity: Hosting meetups, elevating peers, and teaching what you learn creates authentic career gravity.
+4. Community Through Generosity: Hosting meetups, supporting peers, and teaching what you learn creates authentic career gravity.
 
 ## The Companion Book: Reputation as Code
 - Title: ${bookData.title}: ${bookData.subtitle}

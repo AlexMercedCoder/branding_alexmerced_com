@@ -22,7 +22,7 @@ export const networkSites: NetworkSite[] = [
   {
     title: "WhoIsAlexMerced.com",
     url: "https://whoisalexmerced.com",
-    description: "Biographical journey, music, publications, and background",
+    description: "Biography, music, publications, and background",
   },
   {
     title: "AlexMercedMedia.com",
@@ -57,7 +57,7 @@ export const networkSites: NetworkSite[] = [
   {
     title: "IcebergLakehouse.com",
     url: "https://iceberglakehouse.com",
-    description: "Deep dive articles and guides on Apache Iceberg architecture",
+    description: "In-depth articles and guides on Apache Iceberg architecture",
   },
   {
     title: "AgenticLakehouse.com",
@@ -102,7 +102,7 @@ export const networkSites: NetworkSite[] = [
   {
     title: "GrokOverflow.com",
     url: "https://grokoverflow.com",
-    description: "AI engineering, deep dive technical tutorials, and agent patterns",
+    description: "AI engineering, in-depth technical tutorials, and agent patterns",
   },
   {
     title: "IngestThis.com",

@@ -23,7 +23,7 @@ export const GET: APIRoute = async () => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>branding.alexmerced.com — Personal Branding on Proof of Work</title>
+    <title>branding.alexmerced.com: Personal Branding on Proof of Work</title>
     <link>${SITE}/</link>
     <description>Alex Merced's essays and frameworks on technical personal branding, proof of work, and career sovereignty.</description>
     <language>en-us</language>

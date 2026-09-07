@@ -31,7 +31,7 @@ A junior or mid-level developer wants to connect with a VP of Engineering, an op
 
 From the sender's perspective, fifteen minutes feels harmless. But to a busy leader who receives twenty similar messages a week, "picking my brain" is an asymmetric ask. 
 
-It requests their most scarce and valuable resource—uninterrupted time and mental energy—while offering absolutely nothing in return. It places all the conversational burden on them. It feels like an audition, a sales pitch, or an informal job interview. Most of these messages end up ignored or politely declined.
+It requests their most scarce and valuable resource (uninterrupted time and mental energy) while offering absolutely nothing in return. It places all the conversational burden on them. It feels like an audition, a sales pitch, or an informal job interview. Most of these messages end up ignored or politely declined.
 
 ---
 
@@ -51,11 +51,11 @@ A person who would instantly ignore a cold "coffee chat" will frequently accept 
 
 ---
 
-## The 45-Minute Deep-Dive Advantage
+## The 45-Minute High-Bandwidth Advantage
 
 Think about what happens once your guest joins the recording session.
 
-In standard networking scenarios—whether a chaotic conference hallway, a crowded local meetup, or a rigid fifteen-minute screening call—you rarely get more than three minutes of superficial small talk before someone gets pulled away.
+In standard networking scenarios (such as a chaotic conference hallway, a crowded local meetup, or a rigid fifteen-minute screening call), you rarely get more than three minutes of superficial small talk before someone gets pulled away.
 
 On a podcast, you get **thirty to forty-five minutes of focused, high-bandwidth conversation**.
 
@@ -74,7 +74,7 @@ You have transitioned from a stranger into a trusted peer.
 
 Some of the most valuable conversations in podcasting happen before the recording begins and after it ends.
 
-In those five minutes after you stop recording—the digital green room—the formal tone softens. You thank them for their time. They thank you for asking great questions. 
+In those five minutes after you stop recording (often called the digital green room), the formal tone softens. You thank them for their time. They thank you for asking great questions. 
 
 You can ask:
 - *"What are you and your team most excited about over the next six months?"*

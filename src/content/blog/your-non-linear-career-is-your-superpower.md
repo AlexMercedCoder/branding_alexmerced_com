@@ -28,4 +28,4 @@ Before I wrote a single line of production software or authored books for O'Reil
 
 When I pivoted into software engineering at thirty-four through a coding bootcamp, I did not leave those skills behind. I leaned into them immediately. My background in teaching allowed me to break down beginner coding concepts clearly. My background in public communication allowed me to speak at conferences and advocate for open-source technologies with confidence.
 
-Do not erase your history. Your non-linear journey is not a bug. It is your single greatest competitive advantage.
+Do not erase your history. Your non-linear background is not a bug. It is your single greatest competitive advantage.

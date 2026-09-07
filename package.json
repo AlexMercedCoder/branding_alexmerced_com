@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": false,
-  "description": "branding.alexmerced.com — Build an Unignorable Personal Brand on Proof of Work",
+  "description": "branding.alexmerced.com: Build an Unignorable Personal Brand on Proof of Work",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

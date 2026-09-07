@@ -24,7 +24,7 @@ ${p.body}
     )
     .join('\n\n');
 
-  const fullText = `# branding.alexmerced.com — Complete Knowledge Base & Text Corpus
+  const fullText = `# branding.alexmerced.com: Complete Knowledge Base & Text Corpus
 Author: Alex Merced (Head of Developer Relations at Dremio)
 Site: ${SITE}
 Generated: ${new Date().toISOString()}
