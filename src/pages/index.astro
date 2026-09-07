@@ -38,9 +38,24 @@ const bookSchema = {
     "availability": "https://schema.org/InStock"
   }
 };
+
+const brandFilmSchema = {
+  "@type": "VideoObject",
+  "@id": "https://branding.alexmerced.com/#your-name-is-already-talking",
+  "name": "Your Name Is Already Talking — A Personal Branding Film",
+  "description": "A music-driven visual essay by Alex Merced about building a personal brand through useful work, discoverability, consistency, and trust.",
+  "thumbnailUrl": "https://branding.alexmerced.com/images/your-name-is-already-talking-poster.jpg",
+  "contentUrl": "https://branding.alexmerced.com/videos/your-name-is-already-talking.mp4",
+  "uploadDate": "2026-09-06",
+  "duration": "PT3M59.688S",
+  "inLanguage": "en-US",
+  "creator": {
+    "@id": "https://alexmerced.com/#alexmerced"
+  }
+};
 ---
 
-<Base schema={[bookSchema]}>
+<Base schema={[bookSchema, brandFilmSchema]}>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="shell hero-content">
@@ -69,6 +84,44 @@ const bookSchema = {
         <a href={socialLinks.linkedin} target="_blank" rel="noopener" class="social-pill">LinkedIn</a>
         <a href={socialLinks.x} target="_blank" rel="noopener" class="social-pill">X (@alexmercedcoder)</a>
         <a href={socialLinks.youtube} target="_blank" rel="noopener" class="social-pill">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Brand Film -->
+  <section id="brand-film" class="brand-film-section" aria-labelledby="brand-film-title">
+    <div class="shell">
+      <div class="brand-film-heading">
+        <div>
+          <span class="badge badge-cyan">Featured Brand Film</span>
+          <h2 id="brand-film-title">Your Name Is Already Talking</h2>
+        </div>
+        <p>
+          A four-minute visual essay about making your real work visible—so your reputation can speak before you enter the room.
+        </p>
+      </div>
+
+      <div class="brand-film-frame">
+        <div class="brand-film-chrome" aria-hidden="true">
+          <span>REPUTATION / SIGNAL / PROOF</span>
+          <span>03:59</span>
+        </div>
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="/images/your-name-is-already-talking-poster.jpg"
+          aria-label="Your Name Is Already Talking personal branding music video"
+        >
+          <source src="/videos/your-name-is-already-talking.mp4" type="video/mp4" />
+          Your browser does not support embedded video. <a href="/videos/your-name-is-already-talking.mp4">Download the film</a>.
+        </video>
+      </div>
+
+      <div class="brand-film-notes" aria-label="Themes in the film">
+        <span><strong>01</strong> Proof over posturing</span>
+        <span><strong>02</strong> Consistency over virality</span>
+        <span><strong>03</strong> Trust through useful work</span>
       </div>
     </div>
   </section>
