@@ -53,9 +53,47 @@ const brandFilmSchema = {
     "@id": "https://alexmerced.com/#alexmerced"
   }
 };
+
+const faqSchema = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Reputation as Code framework?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reputation as Code is a systems-driven framework for engineers, developers, and career switchers to build professional authority. Instead of relying on static PDF resumes, practitioners ship inspectable public artifacts such as code repositories, technical writing, benchmarks, podcasts, and talks to create compounding inbound career gravity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who created Reputation as Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alex Merced created Reputation as Code. He transitioned from financial education into software engineering in his mid-30s, co-authored O'Reilly books on Apache Iceberg and Apache Polaris, and serves as Head of Developer Relations at Dremio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the compound content engine prevent creator burnout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The compound content engine captures insights directly from everyday technical work. Instead of inventing separate content topics, practitioners repurpose a single project into a technical tutorial, a video walkthrough, a discussion thread, and a conference talk proposal through a structured workflow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I read the book Reputation as Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reputation as Code is available on Amazon in paperback and Kindle eBook formats. Key concepts, excerpts, and diagnostic tools are also published directly on branding.alexmerced.com."
+      }
+    }
+  ]
+};
 ---
 
-<Base schema={[bookSchema, brandFilmSchema]}>
+<Base schema={[bookSchema, brandFilmSchema, faqSchema]}>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="shell hero-content">
@@ -277,6 +315,47 @@ const brandFilmSchema = {
           </a>
         </article>
       ))}
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="shell" style="padding: 2rem 0 4rem;">
+    <div style="max-width: 750px; margin-bottom: 2rem;">
+      <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Questions & Answers</span>
+      <h2>Frequently Asked Questions</h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        Common questions about the framework, book, and career strategy.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">What is the Reputation as Code framework?</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+          Reputation as Code is a systems-driven framework for engineers, developers, and career switchers to build professional authority. Instead of relying on static PDF resumes, practitioners ship inspectable public artifacts such as code repositories, technical writing, benchmarks, podcasts, and talks to create compounding inbound career gravity.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Who created Reputation as Code?</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+          Alex Merced created Reputation as Code. He transitioned from financial education into software engineering in his mid-30s, co-authored O'Reilly books on Apache Iceberg and Apache Polaris, and serves as Head of Developer Relations at Dremio.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">How does the compound content engine prevent creator burnout?</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+          The compound content engine captures insights directly from everyday technical work. Instead of inventing separate content topics, practitioners repurpose a single project into a technical tutorial, a video walkthrough, a discussion thread, and a conference talk proposal through a structured workflow.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Where can I read the book Reputation as Code?</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+          Reputation as Code is available on Amazon in paperback and Kindle eBook formats. Key concepts, excerpts, and diagnostic tools are also published directly on branding.alexmerced.com.
+        </p>
+      </div>
     </div>
   </section>
 

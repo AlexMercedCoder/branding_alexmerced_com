@@ -49,13 +49,51 @@ const breadcrumbSchema = {
     }
   ]
 };
+
+const faqSchema = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the core premise of Reputation as Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reputation as Code argues that technical careers should not depend on static resumes filtered by opaque algorithms. Instead, engineers and practitioners build sovereignty by creating public, inspectable artifacts such as code repositories, technical tutorials, benchmarks, and talks that serve as persistent proof of competence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in the 14 chapters of the book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The book is structured into five sequential phases: breaking through the resume barrier, building inspectable artifacts, operationalizing a compound content engine, leveraging non-linear career backgrounds, and establishing career sovereignty through community and leadership."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What formats are available for Reputation as Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reputation as Code is available globally on Amazon in paperback and Kindle eBook editions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is this book written for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The book is written for software engineers, data practitioners, developer advocates, career switchers, and technical professionals who want to transition from submitting cold job applications to generating inbound career opportunities."
+      }
+    }
+  ]
+};
 ---
 
 <Base
   title={`${bookData.title} by Alex Merced | Career Sovereignty Through Proof of Work`}
   description={bookData.synopsis}
   image="/images/book-cover.png"
-  schema={[bookSchema, breadcrumbSchema]}
+  schema={[bookSchema, breadcrumbSchema, faqSchema]}
 >
   <div class="shell" style="padding: 3.5rem 0 2rem;">
     
@@ -277,6 +315,47 @@ const breadcrumbSchema = {
         <a href={socialLinks.substack} target="_blank" rel="noopener" class="btn btn-secondary">
           Join the Substack Newsletter ↗
         </a>
+      </div>
+    </div>
+
+    <!-- Frequently Asked Questions -->
+    <div id="faq" style="margin-bottom: 4.5rem;">
+      <div style="max-width: 750px; margin-bottom: 2.5rem;">
+        <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Reader FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Details on the book contents, target audience, and ordering options.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">What is the core premise of Reputation as Code?</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+            Reputation as Code argues that technical careers should not depend on static resumes filtered by opaque algorithms. Instead, engineers and practitioners build sovereignty by creating public, inspectable artifacts such as code repositories, technical tutorials, benchmarks, and talks that serve as persistent proof of competence.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">What is included in the 14 chapters of the book?</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+            The book is structured into five sequential phases: breaking through the resume barrier, building inspectable artifacts, operationalizing a compound content engine, leveraging non-linear career backgrounds, and establishing career sovereignty through community and leadership.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">What formats are available for Reputation as Code?</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+            Reputation as Code is available globally on Amazon in paperback and Kindle eBook editions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Who is this book written for?</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.6;">
+            The book is written for software engineers, data practitioners, developer advocates, career switchers, and technical professionals who want to transition from submitting cold job applications to generating inbound career opportunities.
+          </p>
+        </div>
       </div>
     </div>
 
