@@ -34,7 +34,7 @@ This document contains the complete, unabridged text corpus of branding.alexmerc
 --------------------------------------------------------------------------------
 ABOUT THE AUTHOR
 --------------------------------------------------------------------------------
-Alex Merced is Head of Developer Relations at Dremio and recipient of the 2025 Dremio CEO Award. He is the co-author of "Apache Iceberg: The Definitive Guide" (O'Reilly), "Apache Polaris: The Definitive Guide" (O'Reilly), and "Architecting an Apache Iceberg Lakehouse" (Manning).
+Alex Merced is Head of Developer Relations at Dremio and recipient of the 2025 Dremio CEO Award. He is the co-author of "Apache Iceberg: The Definitive Guide" (O'Reilly), "Apache Polaris: The Definitive Guide" (O'Reilly), "Architecting an Apache Iceberg Lakehouse" (Manning), and "Building the Software Factory" (Packt, with Benedikt Stemmildt).
 
 His path into software engineering is non-linear: he spent a decade in financial licensing education and grassroots civic campaigns in New York before attending a software engineering immersive at age thirty-four. Over his tech career, he has published more than 1,000 video tutorials, hosted hundreds of podcast episodes, and built dozens of open-source libraries.
 

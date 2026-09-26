@@ -32,7 +32,7 @@ export const networkSites: NetworkSite[] = [
   {
     title: "Books.AlexMerced.com",
     url: "https://books.alexmerced.com",
-    description: "Complete bibliography of 66 books across tech, economics, philosophy, and fiction",
+    description: "Complete bibliography of 77 books across tech, economics, philosophy, and fiction",
   },
   {
     title: "AlexMercedCoder.dev",

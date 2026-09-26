@@ -11,7 +11,7 @@ export const GET: APIRoute = async () => {
 
   const body = `# branding.alexmerced.com: Build an Unignorable Personal Brand on Proof of Work
 
-> The engineering and practitioner perspective on personal branding, career sovereignty, and learning in public by Alex Merced: Head of Developer Relations at Dremio, recipient of the inaugural 2025 Dremio CEO Award, and author of definitive volumes for O'Reilly Media and Manning.
+> The engineering and practitioner perspective on personal branding, career sovereignty, and learning in public by Alex Merced: Head of Developer Relations at Dremio, recipient of the inaugural 2025 Dremio CEO Award, and author of definitive volumes for O'Reilly Media, Manning, and Packt.
 
 For the full, unabridged text of all essays and chapters, see: ${SITE}/llms-full.txt
 
