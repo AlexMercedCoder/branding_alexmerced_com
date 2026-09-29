@@ -32,7 +32,7 @@ export const networkSites: NetworkSite[] = [
   {
     title: "Books.AlexMerced.com",
     url: "https://books.alexmerced.com",
-    description: "Complete bibliography of 77 books across tech, economics, philosophy, and fiction",
+    description: "Complete bibliography of books across tech, economics, philosophy, and fiction",
   },
   {
     title: "AlexMercedCoder.dev",
@@ -45,6 +45,11 @@ export const networkSites: NetworkSite[] = [
     description: "Data lakehouse, Apache Iceberg, and AI education and video catalog",
   },
   {
+    title: "Resources.AlexMerced.com",
+    url: "https://resources.alexmerced.com",
+    description: "Curated link hub of free books, courses, communities, and learning resources",
+  },
+  {
     title: "OpenDataLakehouse.com",
     url: "https://opendatalakehouse.com",
     description: "Comprehensive guide to open data lakehouse architectures and standards",
@@ -53,6 +58,11 @@ export const networkSites: NetworkSite[] = [
     title: "DataLakehouseHub.com",
     url: "https://datalakehousehub.com",
     description: "Practitioner resource for open lakehouses and Apache Iceberg",
+  },
+  {
+    title: "DataLakehouse.help",
+    url: "https://datalakehouse.help",
+    description: "Structured technical documentation and how-to reference for lakehouse work",
   },
   {
     title: "IcebergLakehouse.com",
@@ -80,6 +90,11 @@ export const networkSites: NetworkSite[] = [
     description: "Agent governance, open agent specifications, and AI engineering",
   },
   {
+    title: "DataAIWiki.com",
+    url: "https://dataaiwiki.com",
+    description: "Continuously synced wiki of data and AI topics",
+  },
+  {
     title: "SemanticLakehouse.com",
     url: "https://semanticlakehouse.com",
     description: "Semantic layers, metrics architecture, and data modeling for AI",
@@ -95,9 +110,19 @@ export const networkSites: NetworkSite[] = [
     description: "Modern data engineering glossary, benchmarks, and patterns",
   },
   {
+    title: "WeekOfData.com",
+    url: "https://weekofdata.com",
+    description: "Data community events listing",
+  },
+  {
     title: "AlexMerced.blog",
     url: "https://alexmerced.blog",
     description: "Technical essays on web development, data engineering, and AI",
+  },
+  {
+    title: "Tuts.AlexMercedCoder.dev",
+    url: "https://tuts.alexmercedcoder.dev",
+    description: "Long-running blog of general software and coding tutorials",
   },
   {
     title: "GrokOverflow.com",
@@ -108,6 +133,21 @@ export const networkSites: NetworkSite[] = [
     title: "IngestThis.com",
     url: "https://ingestthis.com",
     description: "Data ingestion, streaming, and lakehouse pipeline engineering",
+  },
+  {
+    title: "AlexMercedMusic.com",
+    url: "https://alexmercedmusic.com",
+    description: "Music Alex Merced has written, recorded, and produced",
+  },
+  {
+    title: "AlexMercedLibertarian.com",
+    url: "https://alexmercedlibertarian.com",
+    description: "Philosophy and political writing, separate from technical work",
+  },
+  {
+    title: "D6Storyteller.AlexMerced.com",
+    url: "https://d6storyteller.alexmerced.com",
+    description: "Tabletop roleplaying game system and companion books",
   },
 ];
 
