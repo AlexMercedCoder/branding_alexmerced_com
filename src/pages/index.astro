@@ -30,8 +30,11 @@ const bookSchema = {
   "datePublished": "2026",
   "description": bookData.synopsis,
   "image": "https://branding.alexmerced.com/images/book-cover.png",
-  "url": bookData.amazonUrl,
-  "sameAs": bookData.amazonUrl,
+  "url": "https://branding.alexmerced.com/book/",
+  "sameAs": [
+    "https://books.alexmerced.com/books/reputation-as-code/",
+    bookData.amazonUrl
+  ],
   "offers": {
     "@type": "Offer",
     "url": bookData.amazonUrl,
@@ -269,6 +272,22 @@ const faqSchema = {
   <div class="shell">
     <BookSpotlight />
   </div>
+
+  <!-- Personal Hub Checklist (lead magnet) -->
+  <section class="shell" style="padding: 2rem 0 0;">
+    <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; border-color: var(--amber);">
+      <div>
+        <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Free Printable Checklist</span>
+        <h3 style="margin-bottom: 0.5rem;">Build a Personal Hub You Own</h3>
+        <p style="color: var(--text-muted); margin: 0; max-width: 600px; font-size: 0.95rem;">
+          Twenty-six steps on one page: your domain, free email forwarding, hosting, proof of work on the homepage, a digital business card, and search and AI discoverability.
+        </p>
+      </div>
+      <a href="/personal-hub-checklist" class="btn btn-primary">
+        Get the Checklist &rarr;
+      </a>
+    </div>
+  </section>
 
   <!-- Interactive Brand Audit CTA Banner -->
   <section class="shell" style="padding: 2rem 0;">

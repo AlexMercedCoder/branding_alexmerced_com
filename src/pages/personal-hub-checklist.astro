@@ -1,0 +1,241 @@
+---
+import Base from '../layouts/Base.astro';
+
+const pageUrl = 'https://branding.alexmerced.com/personal-hub-checklist';
+
+const sections = [
+  {
+    id: 'domain',
+    title: '1. Own the address',
+    items: [
+      'Buy your name as a domain: FirstnameLastname.com first, then a middle name, a suffix like "coder", or a .dev or .org if the .com is taken.',
+      'Pick a registrar with free WHOIS privacy and free email forwarding, so you are not paying monthly just to receive mail.',
+      'Set up a catch-all email forward so anything@yourdomain lands in the inbox you already use.',
+      'Decide your public addresses: hello@ for the site, speaking@ for event organizers, press@ for podcasts and interviews.',
+    ],
+  },
+  {
+    id: 'hosting',
+    title: '2. Ship the site without breaking email',
+    items: [
+      'Host the site on a free static tier (Netlify or Vercel are both fine for a personal site).',
+      'Keep your nameservers at the registrar. Moving DNS to the host can switch off the free email forwarding.',
+      'Add an ALIAS or ANAME record for the root and a CNAME for www pointing at your host, and leave the mail settings on email forwarding.',
+      'Put the code in a GitHub repository and connect it to the host, so every saved change rebuilds and publishes the site.',
+    ],
+  },
+  {
+    id: 'content',
+    title: '3. Put proof of work on the homepage',
+    items: [
+      'Write one line that says who you are and what you work on. Name your technical anchor instead of a generic title.',
+      'Show three pieces of real work with links: a repository, a live demo, an article, a talk, or a book.',
+      'Add a short career timeline. A non-linear background is an advantage when you say it plainly.',
+      'List your recent writing with dates, so visitors can see the work is ongoing.',
+      'End the page with one clear way to reach you.',
+    ],
+  },
+  {
+    id: 'bcard',
+    title: '4. Replace paper business cards',
+    items: [
+      'Create a mobile-first /bcard page and mark it noindex. It is for people you meet, not for search results.',
+      'Add a "Save Contact" button that downloads a .vcf file with your name, title, email, phone, and website.',
+      'Add a short form so the people you meet can leave their email and you can follow up.',
+      'Write the /bcard URL to an NFC card or bracelet with a free app like NFC Tools, and test it on two different phones.',
+    ],
+  },
+  {
+    id: 'discoverability',
+    title: '5. Make it readable by search engines and AI answer engines',
+    items: [
+      'Canonical URL, title, description, and Open Graph tags on every page.',
+      'An XML sitemap, and a robots.txt that allows crawling of everything except /bcard.',
+      'Person structured data (JSON-LD) with your name, job title, employer, and a sameAs list of every profile you control.',
+      'An llms.txt that summarizes who you are and links your main pages, plus an llms-full.txt with the full text of your articles.',
+      'Verify the domain in Google Search Console with a DNS TXT record.',
+    ],
+  },
+  {
+    id: 'loop',
+    title: '6. Keep it compounding',
+    items: [
+      'Once a month, read the Search Console queries. Write a dedicated guide for any topic where you already show up on page two or three.',
+      'Run each real project through the waterfall: the code, then an article, a video walkthrough, a podcast discussion, a talk proposal, and a few short social notes.',
+      'Publish on your own domain first, then share out to the platforms. The hub is the source; the feeds are distribution.',
+      'Update the site when your title, links, or work change. The NFC card and the links people saved keep pointing at the right place.',
+    ],
+  },
+];
+
+const checklistSchema = {
+  "@type": "HowTo",
+  "@id": `${pageUrl}#checklist`,
+  "name": "Personal hub checklist",
+  "description": "A printable checklist for building a personal website you own: domain, free email forwarding, hosting, proof of work, a digital business card, and search and AI discoverability.",
+  "url": pageUrl,
+  "author": { "@id": "https://alexmerced.com/#alexmerced" },
+  "isPartOf": { "@id": "https://branding.alexmerced.com/#website" },
+  "step": sections.map((section, i) => ({
+    "@type": "HowToSection",
+    "position": i + 1,
+    "name": section.title.replace(/^\d+\.\s*/, ''),
+    "itemListElement": section.items.map((text, j) => ({
+      "@type": "HowToStep",
+      "position": j + 1,
+      "text": text,
+    })),
+  })),
+};
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://branding.alexmerced.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Personal Hub Checklist", "item": pageUrl },
+  ],
+};
+---
+
+<Base
+  title="Personal Hub Checklist | Branding by Alex Merced"
+  description="A free, printable checklist for building a personal website you own: your domain, free email forwarding, hosting, proof of work, a digital business card, and search and AI discoverability."
+  schema={[checklistSchema, breadcrumbSchema]}
+>
+  <section class="shell checklist-page">
+    <header class="checklist-header">
+      <span class="badge badge-amber">Free checklist</span>
+      <h1>The Personal Hub Checklist</h1>
+      <p class="checklist-lead">
+        Your professional identity should live at an address you own. This checklist condenses the steps from
+        <a href="/blog/how-to-build-your-personal-hub-on-the-web">How to Build Your Sovereign Personal Hub on the Web</a>
+        and the proof-of-work ideas in <a href="/book"><em>Reputation as Code</em></a> into one page you can print and work through.
+        The only thing you should have to pay for is the domain.
+      </p>
+      <div class="hero-actions checklist-actions">
+        <button type="button" class="btn btn-primary" id="print-checklist">Print or save as PDF</button>
+        <a href="/blog/how-to-build-your-personal-hub-on-the-web" class="btn btn-secondary">Read the full guide &rarr;</a>
+      </div>
+    </header>
+
+    {sections.map((section) => (
+      <section class="card checklist-section" aria-labelledby={`sec-${section.id}`}>
+        <h2 id={`sec-${section.id}`}>{section.title}</h2>
+        <ul class="checklist-items">
+          {section.items.map((item, i) => (
+            <li>
+              <label>
+                <input type="checkbox" name={`${section.id}-${i}`} />
+                <span>{item}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <section class="card checklist-next">
+      <h2>Next steps</h2>
+      <p>
+        Not sure where your brand stands? Take the <a href="/audit">two-minute brand audit</a>.
+        Want the full system behind this list? It is in <a href="/book"><em>Reputation as Code</em></a>
+        (<a href="https://books.alexmerced.com/books/reputation-as-code/">book page</a>).
+        To have Alex talk about proof of work and personal branding at your event, see
+        <a href="https://alexmerced.com/speaking">speaking</a>.
+      </p>
+    </section>
+  </section>
+
+  <script>
+    document.getElementById('print-checklist')?.addEventListener('click', () => window.print());
+  </script>
+</Base>
+
+<style>
+  .checklist-page {
+    padding: 4rem 0 1rem;
+    max-width: 820px;
+  }
+  .checklist-header {
+    margin-bottom: 2rem;
+  }
+  .checklist-header h1 {
+    margin: 0.75rem 0;
+  }
+  .checklist-lead {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .checklist-actions button {
+    cursor: pointer;
+    font: inherit;
+  }
+  .checklist-section {
+    margin-bottom: 1.25rem;
+  }
+  .checklist-section h2,
+  .checklist-next h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .checklist-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .checklist-items label {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    cursor: pointer;
+    line-height: 1.55;
+  }
+  .checklist-items input {
+    margin-top: 0.3rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    flex: none;
+    accent-color: var(--amber);
+  }
+  .checklist-next p {
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  @media print {
+    :global(.site-header),
+    :global(.site-footer),
+    :global(.cta-strip),
+    .checklist-actions {
+      display: none !important;
+    }
+    :global(body) {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+    .checklist-page {
+      padding: 0;
+      max-width: none;
+    }
+    .checklist-section,
+    .checklist-next {
+      background: none !important;
+      border: 1px solid #999999 !important;
+      break-inside: avoid;
+    }
+    .checklist-page h1,
+    .checklist-page h2,
+    .checklist-lead,
+    .checklist-next p,
+    .checklist-items label {
+      color: #000000 !important;
+    }
+    .checklist-page a {
+      color: #000000 !important;
+    }
+  }
+</style>
