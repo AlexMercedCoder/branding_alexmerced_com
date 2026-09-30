@@ -9,7 +9,7 @@ export const GET: APIRoute = async () => {
   const posts = await getCollection('blog');
   const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-  const body = `# branding.alexmerced.com: Build an Unignorable Personal Brand on Proof of Work
+  const body = `# Branding by Alex Merced (branding.alexmerced.com): Build an Unignorable Personal Brand on Proof of Work
 
 > The engineering and practitioner perspective on personal branding, career sovereignty, and learning in public by Alex Merced: Head of Developer Relations at Dremio, recipient of the inaugural 2025 Dremio CEO Award, and author of definitive volumes for O'Reilly Media, Manning, and Packt.
 
