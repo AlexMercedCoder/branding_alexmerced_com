@@ -1,0 +1,59 @@
+---
+import network from '../../network/network.json';
+
+const cta = network.cta;
+---
+
+{cta && (
+  <section class="cta-strip" aria-label={cta.heading}>
+    <div class="shell cta-strip__inner">
+      <h2 class="cta-strip__heading">{cta.heading}</h2>
+      <ul class="cta-strip__links">
+        {cta.links.map((link) => (
+          <li>
+            <a href={link.url} class="btn btn-secondary" data-network-event={link.event}>
+              {link.label} &rarr;
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .cta-strip {
+    border-top: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(6, 182, 212, 0.06) 100%);
+    padding: 2.5rem 0;
+    margin-top: 5rem;
+  }
+  .cta-strip__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+  .cta-strip__heading {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #ffffff;
+  }
+  .cta-strip__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cta-strip__links li:first-child .btn {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #0b0f19;
+  }
+  :global(.cta-strip + .site-footer) {
+    margin-top: 0;
+  }
+</style>

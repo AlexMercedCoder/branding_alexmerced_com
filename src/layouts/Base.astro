@@ -1,6 +1,9 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+import networkHead from '../../network/network-head.html?raw';
+import network from '../../network/network.json';
 import '../styles/global.css';
 
 interface Props {
@@ -16,7 +19,7 @@ interface Props {
 }
 
 const {
-  title = "branding.alexmerced.com | Build an Unignorable Personal Brand on Proof of Work",
+  title = "Build an Unignorable Personal Brand on Proof of Work | Branding by Alex Merced",
   description = "Alex Merced's systems-driven blueprint for technical professionals and career switchers to build career sovereignty through proof of work and compound distribution.",
   image = "/images/book-cover.png",
   article,
@@ -26,36 +29,13 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 
-// Base Schema Graph (Alex Merced + branding.alexmerced.com)
-const defaultPersonSchema = {
-  "@type": "Person",
-  "@id": "https://alexmerced.com/#alexmerced",
-  "name": "Alex Merced",
-  "jobTitle": "Head of Developer Relations",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Dremio",
-    "url": "https://www.dremio.com"
-  },
-  "url": "https://branding.alexmerced.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/alexmerced/",
-    "https://x.com/alexmercedcoder",
-    "https://github.com/AlexMercedCoder",
-    "https://youtube.com/@AlexMercedCoder",
-    "https://alexmerced.substack.com",
-    "https://alexmerced.com",
-    "https://alexmerced.blog"
-  ],
-  "award": "2025 Dremio CEO Award",
-  "description": "Head of Developer Relations at Dremio, O'Reilly, Manning & Packt author, and creator of the Reputation as Code engineering framework."
-};
-
+// Site-level schema. The canonical Person JSON-LD comes from network/network-head.html.
 const defaultWebSiteSchema = {
   "@type": "WebSite",
   "@id": "https://branding.alexmerced.com/#website",
   "url": "https://branding.alexmerced.com",
-  "name": "branding.alexmerced.com",
+  "name": "Branding by Alex Merced",
+  "alternateName": "branding.alexmerced.com",
   "description": "The engineering and practitioner blueprint for personal branding, proof of work, and career sovereignty by Alex Merced.",
   "publisher": {
     "@id": "https://alexmerced.com/#alexmerced"
@@ -68,7 +48,6 @@ const extraSchemas = Array.isArray(schema) ? schema : [schema];
 const fullStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    defaultPersonSchema,
     defaultWebSiteSchema,
     ...extraSchemas.filter(Boolean)
   ]
@@ -79,6 +58,7 @@ const fullStructuredData = {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <Fragment set:html={networkHead} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -92,7 +72,7 @@ const fullStructuredData = {
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:site_name" content="branding.alexmerced.com" />
+    <meta property="og:site_name" content="Branding by Alex Merced" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content={article ? "article" : "website"} />
     <meta property="og:url" content={canonicalURL} />
@@ -118,7 +98,7 @@ const fullStructuredData = {
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@alexmercedcoder" />
+    <meta name="twitter:site" content={network.twitterSite} />
     <meta name="twitter:creator" content="@alexmercedcoder" />
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
@@ -126,7 +106,7 @@ const fullStructuredData = {
     <meta name="twitter:image" content={ogImageURL} />
 
     <!-- RSS & Discovery Feeds -->
-    <link rel="alternate" type="application/rss+xml" title="branding.alexmerced.com RSS Feed" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Branding by Alex Merced RSS Feed" href="/rss.xml" />
     <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt" />
     <link rel="alternate" type="text/plain" title="LLMs-full.txt" href="/llms-full.txt" />
     <link rel="webmcp" href="/.well-known/webmcp.json" />
@@ -140,6 +120,7 @@ const fullStructuredData = {
     <main>
       <slot />
     </main>
+    <CtaStrip />
     <SiteFooter />
     <!-- WebMCP: exposes read-only tools to browser AI agents -->
     <script src="/webmcp/alex-merced-webmcp.js" defer></script>

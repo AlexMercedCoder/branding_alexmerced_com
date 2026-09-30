@@ -1,12 +1,15 @@
 ---
-import { socialLinks, networkSites, newsletters, communityEvents } from '../data/network';
+import { socialLinks, newsletters, communityEvents } from '../data/network';
+import network from '../../network/network.json';
+
+const { groups, allSitesUrl, allSitesLabel } = network.footer;
 ---
 
 <footer class="site-footer">
   <div class="shell">
     <div class="footer-grid">
       <div>
-        <h3 style="margin-bottom: 0.75rem; color: #ffffff;">branding.alexmerced.com</h3>
+        <h3 style="margin-bottom: 0.75rem; color: #ffffff;">Branding by Alex Merced</h3>
         <p style="color: var(--text-muted); max-width: 380px; font-size: 0.95rem;">
           Engineering career sovereignty through public proof of work, systems thinking, and compound distribution.
         </p>
@@ -33,35 +36,32 @@ import { socialLinks, networkSites, newsletters, communityEvents } from '../data
           <li><a href="/book">Reputation as Code (Book)</a></li>
           <li><a href="/blog">Branding Essays & Blog</a></li>
           <li><a href="/audit">Interactive Brand Audit</a></li>
+          <li><a href="/personal-hub-checklist">Personal Hub Checklist</a></li>
+          <li><a href="https://alexmerced.com/speaking">Book Alex to Speak</a></li>
           <li><a href="/llms.txt">llms.txt (AI Agent Guide)</a></li>
         </ul>
       </div>
 
-      <div>
-        <h4 style="color: #ffffff; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Flagship Resources</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 2;">
-          <li><a href="https://alexmerced.com" target="_blank" rel="noopener">AlexMerced.com</a></li>
-          <li><a href="https://books.alexmerced.com" target="_blank" rel="noopener">Books by Alex Merced</a></li>
-          <li><a href="https://alexmercedcoder.dev" target="_blank" rel="noopener">AlexMercedCoder.dev</a></li>
-          <li><a href="https://opendatalakehouse.com" target="_blank" rel="noopener">OpenDataLakehouse.com</a></li>
-          <li><a href="https://whoisalexmerced.com" target="_blank" rel="noopener">WhoIsAlexMerced.com</a></li>
-        </ul>
-      </div>
     </div>
 
-    <!-- Network Runs -->
-    <nav class="footer__run" aria-label="The Alex Merced Network">
-      <div class="footer__run-title">The Alex Merced Network</div>
-      <ul class="footer__run-list">
-        {networkSites.map((site) => (
-          <li>
-            <a href={site.url} target="_blank" rel="noopener">
-              {site.title}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <!-- Network footer: generated from network/network.json -->
+    {groups.map((group) => (
+      <nav class="footer__run" aria-label={group.title}>
+        <div class="footer__run-title">{group.title}</div>
+        <ul class="footer__run-list">
+          {group.links.map((link) => (
+            <li>
+              <a href={link.url} target="_blank" rel="noopener">
+                {link.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    ))}
+    <p class="footer__all-sites">
+      <a href={allSitesUrl}>{allSitesLabel} &rarr;</a>
+    </p>
 
     <nav class="footer__run" aria-label="Free weekly newsletters">
       <div class="footer__run-title">Free Weekly Newsletters</div>
@@ -124,6 +124,10 @@ import { socialLinks, networkSites, newsletters, communityEvents } from '../data
     font-size: 0.85rem;
     text-decoration: none;
     transition: color 0.2s ease;
+  }
+  .footer__all-sites {
+    margin: 0 0 1.5rem;
+    font-size: 0.9rem;
   }
   .footer__run-list a:hover {
     color: #ffffff;
