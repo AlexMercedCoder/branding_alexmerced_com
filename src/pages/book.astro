@@ -23,8 +23,11 @@ const bookSchema = {
   "datePublished": "2026",
   "description": bookData.synopsis,
   "image": "https://branding.alexmerced.com/images/book-cover.png",
-  "url": bookData.amazonUrl,
-  "sameAs": bookData.amazonUrl,
+  "url": "https://branding.alexmerced.com/book/",
+  "sameAs": [
+    "https://books.alexmerced.com/books/reputation-as-code/",
+    bookData.amazonUrl
+  ],
   "offers": {
     "@type": "Offer",
     "url": bookData.amazonUrl,
