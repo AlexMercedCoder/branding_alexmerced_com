@@ -29,7 +29,7 @@ The traditional two-page PDF resume submitted to automated applicant tracking sy
 - Author: ${bookData.author} (Head of Developer Relations at Dremio)
 - Availability: Available on Amazon (Paperback & Kindle)
 - Purchase URL: ${bookData.amazonUrl}
-- Overview Page: ${SITE}/book
+- Overview Page: ${SITE}/book/
 - Synopsis: ${bookData.synopsis}
 
 ### Book Outline (5 Parts, 14 Chapters)
@@ -42,8 +42,8 @@ ${part.chapters.map((ch) => `- **${ch.number}: ${ch.title}**: ${ch.summary}`).jo
   .join('\n\n')}
 
 ## Core Interactive Tools
-- [Personal Brand Diagnostic Audit](${SITE}/audit): Interactive 5-question audit evaluating Artifact Volume, Distribution Engine, and Inbound Gravity Index.
-- [Personal Hub Checklist](${SITE}/personal-hub-checklist): Printable checklist for building a personal website you own, from domain and email forwarding to structured data and Search Console.
+- [Personal Brand Diagnostic Audit](${SITE}/audit/): Interactive 5-question audit evaluating Artifact Volume, Distribution Engine, and Inbound Gravity Index.
+- [Personal Hub Checklist](${SITE}/personal-hub-checklist/): Printable checklist for building a personal website you own, from domain and email forwarding to structured data and Search Console.
 - [Book Alex to speak](https://alexmerced.com/speaking): Talks and event booking.
 
 ## Articles & Essays

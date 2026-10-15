@@ -14,10 +14,10 @@ const { currentPath = '/' } = Astro.props;
     <nav>
       <ul class="nav-links">
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
-        <li><a href="/book" class={currentPath.startsWith('/book') ? 'active' : ''}>The Book</a></li>
-        <li><a href="/blog" class={currentPath.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
-        <li><a href="/audit" class={currentPath.startsWith('/audit') ? 'active' : ''}>Brand Audit</a></li>
-        <li><a href="/personal-hub-checklist" class={currentPath.startsWith('/personal-hub-checklist') ? 'active' : ''}>Hub Checklist</a></li>
+        <li><a href="/book/" class={currentPath.startsWith('/book') ? 'active' : ''}>The Book</a></li>
+        <li><a href="/blog/" class={currentPath.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
+        <li><a href="/audit/" class={currentPath.startsWith('/audit') ? 'active' : ''}>Brand Audit</a></li>
+        <li><a href="/personal-hub-checklist/" class={currentPath.startsWith('/personal-hub-checklist') ? 'active' : ''}>Hub Checklist</a></li>
         <li>
           <a href="https://alexmerced.substack.com" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
             Substack ↗

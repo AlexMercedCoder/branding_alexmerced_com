@@ -12,7 +12,7 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
 
 const bookSchema = {
   "@type": "Book",
-  "@id": "https://branding.alexmerced.com/book#book",
+  "@id": "https://branding.alexmerced.com/book/#book",
   "name": bookData.title,
   "headline": `${bookData.title}: ${bookData.subtitle}`,
   "author": {
@@ -29,7 +29,7 @@ const bookSchema = {
   "inLanguage": "en-US",
   "datePublished": "2026",
   "description": bookData.synopsis,
-  "image": "https://branding.alexmerced.com/images/book-cover.png",
+  "image": "https://branding.alexmerced.com/images/book-cover.jpg",
   "url": "https://branding.alexmerced.com/book/",
   "sameAs": [
     "https://books.alexmerced.com/books/reputation-as-code/",
@@ -109,13 +109,13 @@ const faqSchema = {
       </p>
 
       <div class="hero-actions">
-        <a href="/newsletter" class="btn btn-primary">
+        <a href="/newsletter/" class="btn btn-primary">
           Follow Branding Updates &rarr;
         </a>
-        <a href="/book" class="btn btn-secondary">
+        <a href="/book/" class="btn btn-secondary">
           The Book: Reputation as Code &rarr;
         </a>
-        <a href="/audit" class="btn btn-secondary">
+        <a href="/audit/" class="btn btn-secondary">
           Take Brand Audit &rarr;
         </a>
       </div>
@@ -283,7 +283,7 @@ const faqSchema = {
           Twenty-six steps on one page: your domain, free email forwarding, hosting, proof of work on the homepage, a digital business card, and search and AI discoverability.
         </p>
       </div>
-      <a href="/personal-hub-checklist" class="btn btn-primary">
+      <a href="/personal-hub-checklist/" class="btn btn-primary">
         Get the Checklist &rarr;
       </a>
     </div>
@@ -299,7 +299,7 @@ const faqSchema = {
           Take our 2-minute diagnostic to audit your Artifact Volume, Distribution Engine, and Career Gravity index.
         </p>
       </div>
-      <a href="/audit" class="btn btn-primary">
+      <a href="/audit/" class="btn btn-primary">
         Start Free Brand Audit &rarr;
       </a>
     </div>
@@ -328,7 +328,7 @@ const faqSchema = {
         <span class="badge badge-amber" style="margin-bottom: 0.5rem;">Insights & Articles</span>
         <h2>Latest from the Branding Blog</h2>
       </div>
-      <a href="/blog" style="font-weight: 600; font-size: 0.95rem;">View all posts &rarr;</a>
+      <a href="/blog/" style="font-weight: 600; font-size: 0.95rem;">View all posts &rarr;</a>
     </div>
 
     <div class="grid-3">
@@ -340,12 +340,12 @@ const faqSchema = {
             ))}
           </div>
           <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">
-            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+            <a href={`/blog/${post.id}/`}>{post.data.title}</a>
           </h3>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
             {post.data.description}
           </p>
-          <a href={`/blog/${post.id}`} style="font-size: 0.85rem; font-weight: 600;">
+          <a href={`/blog/${post.id}/`} style="font-size: 0.85rem; font-weight: 600;">
             Read article &rarr;
           </a>
         </article>

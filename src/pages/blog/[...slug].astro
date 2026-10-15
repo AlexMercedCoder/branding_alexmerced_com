@@ -28,7 +28,7 @@ const articleSchema = {
   "publisher": {
     "@id": "https://alexmerced.com/#alexmerced"
   },
-  "image": "https://branding.alexmerced.com/images/book-cover.png",
+  "image": "https://branding.alexmerced.com/images/book-cover.jpg",
   "keywords": post.data.tags.join(', '),
   "mainEntityOfPage": articleURL.toString(),
   "inLanguage": "en-US"
@@ -47,7 +47,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "https://branding.alexmerced.com/blog"
+      "item": "https://branding.alexmerced.com/blog/"
     },
     {
       "@type": "ListItem",
@@ -71,7 +71,7 @@ const breadcrumbSchema = {
 >
   <article class="shell" style="padding: 4rem 0 2rem; max-width: 800px;">
     <div style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem;">
-      <a href="/blog" style="font-size: 0.85rem; font-weight: 600; color: var(--text-faint);">&larr; Back to all essays</a>
+      <a href="/blog/" style="font-size: 0.85rem; font-weight: 600; color: var(--text-faint);">&larr; Back to all essays</a>
       <h1 style="margin: 1rem 0 0.75rem; font-size: clamp(2rem, 4vw, 2.8rem);">{post.data.title}</h1>
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; color: var(--text-faint); font-size: 0.9rem;">
         <time datetime={post.data.pubDate.toISOString()}>

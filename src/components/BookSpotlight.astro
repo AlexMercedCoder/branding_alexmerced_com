@@ -8,11 +8,11 @@ import { socialLinks } from '../data/network';
     
     <!-- 3D Book Cover Presentation -->
     <div class="book-cover-wrapper">
-      <a href="/book" style="display: block; text-decoration: none;" aria-label="Explore Reputation as Code by Alex Merced">
+      <a href="/book/" style="display: block; text-decoration: none;" aria-label="Explore Reputation as Code by Alex Merced">
         <picture>
-          <source srcset="/images/book-cover.webp" type="image/webp" />
+          <source srcset="/images/book-cover-340.webp 340w, /images/book-cover-680.webp 680w" sizes="(max-width: 400px) 80vw, 310px" type="image/webp" />
           <img
-            src="/images/book-cover.png"
+            src="/images/book-cover-680.jpg"
             alt="Reputation as Code book cover by Alex Merced"
             class="book-cover-3d"
             width="310"
@@ -32,7 +32,7 @@ import { socialLinks } from '../data/network';
       </div>
       
       <h2 style="margin-bottom: 0.5rem; font-size: clamp(1.8rem, 3vw, 2.3rem);">
-        <a href="/book" style="color: #ffffff; text-decoration: none;">{bookData.title}</a>
+        <a href="/book/" style="color: #ffffff; text-decoration: none;">{bookData.title}</a>
       </h2>
       
       <p style="color: var(--amber); font-weight: 600; font-size: 1.05rem; line-height: 1.4; margin-bottom: 1.25rem;">
@@ -60,7 +60,7 @@ import { socialLinks } from '../data/network';
         <a href={bookData.amazonUrl} target="_blank" rel="noopener" class="btn btn-primary">
           Order on Amazon ↗
         </a>
-        <a href="/book" class="btn btn-secondary">
+        <a href="/book/" class="btn btn-secondary">
           Explore All 14 Chapters &rarr;
         </a>
       </div>

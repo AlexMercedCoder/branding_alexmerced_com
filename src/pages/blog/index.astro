@@ -7,10 +7,10 @@ const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const blogPageSchema = {
   "@type": "CollectionPage",
-  "@id": "https://branding.alexmerced.com/blog#collection",
+  "@id": "https://branding.alexmerced.com/blog/#collection",
   "name": "Branding & Career Strategy Blog",
   "description": "Practical essays on engineering proof of work, building content engines, non-linear career pivots, and developer advocacy by Alex Merced.",
-  "url": "https://branding.alexmerced.com/blog",
+  "url": "https://branding.alexmerced.com/blog/",
   "isPartOf": {
     "@id": "https://branding.alexmerced.com/#website"
   }
@@ -29,7 +29,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "https://branding.alexmerced.com/blog"
+      "item": "https://branding.alexmerced.com/blog/"
     }
   ]
 };
@@ -64,14 +64,14 @@ const breadcrumbSchema = {
           </div>
 
           <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">
-            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+            <a href={`/blog/${post.id}/`}>{post.data.title}</a>
           </h2>
 
           <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
             {post.data.description}
           </p>
 
-          <a href={`/blog/${post.id}`} style="font-weight: 600; font-size: 0.9rem;">
+          <a href={`/blog/${post.id}/`} style="font-weight: 600; font-size: 0.9rem;">
             Read article &rarr;
           </a>
         </article>

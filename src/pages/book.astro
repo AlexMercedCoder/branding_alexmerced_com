@@ -5,7 +5,7 @@ import bookData from '../data/book.json';
 import { socialLinks } from '../data/network';
 const bookSchema = {
   "@type": "Book",
-  "@id": "https://branding.alexmerced.com/book#book",
+  "@id": "https://branding.alexmerced.com/book/#book",
   "name": bookData.title,
   "headline": `${bookData.title}: ${bookData.subtitle}`,
   "author": {
@@ -22,7 +22,7 @@ const bookSchema = {
   "inLanguage": "en-US",
   "datePublished": "2026",
   "description": bookData.synopsis,
-  "image": "https://branding.alexmerced.com/images/book-cover.png",
+  "image": "https://branding.alexmerced.com/images/book-cover.jpg",
   "url": "https://branding.alexmerced.com/book/",
   "sameAs": [
     "https://books.alexmerced.com/books/reputation-as-code/",
@@ -48,7 +48,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "The Book",
-      "item": "https://branding.alexmerced.com/book"
+      "item": "https://branding.alexmerced.com/book/"
     }
   ]
 };
@@ -95,7 +95,7 @@ const faqSchema = {
 <Base
   title={`${bookData.title} | Career Sovereignty Through Proof of Work | Branding by Alex Merced`}
   description={bookData.synopsis}
-  image="/images/book-cover.png"
+  image="/images/book-cover.jpg"
   schema={[bookSchema, breadcrumbSchema, faqSchema]}
 >
   <div class="shell" style="padding: 3.5rem 0 2rem;">
@@ -106,9 +106,9 @@ const faqSchema = {
       <!-- 3D Book Cover -->
       <div class="book-cover-wrapper">
         <picture>
-          <source srcset="/images/book-cover.webp" type="image/webp" />
+          <source srcset="/images/book-cover-340.webp 340w, /images/book-cover-680.webp 680w" sizes="(max-width: 400px) 80vw, 340px" type="image/webp" />
           <img
-            src="/images/book-cover.png"
+            src="/images/book-cover-680.jpg"
             alt="Reputation as Code book cover by Alex Merced"
             class="book-cover-3d"
             width="340"
